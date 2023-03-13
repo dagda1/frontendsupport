@@ -15,6 +15,8 @@ export type PostMarkdownAttributes = {
 export async function getPost(slug: string) {
   console.dir({ slug, a: __dirname });
   const source = await fs.readFile(path.join(`${__dirname}/../blog-posts`, `${slug}.mdx`), 'utf-8');
+
+  console.dir({ source });
   const { default: remarkGfm } = await import('remark-gfm');
   const { default: rehypeAutolinkHeadings } = await import('rehype-autolink-headings');
 

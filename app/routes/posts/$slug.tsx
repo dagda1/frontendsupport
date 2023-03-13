@@ -11,7 +11,7 @@ type LoaderData = {
 
 export const loader: LoaderFunction = async ({ params }) => {
   console.dir('here');
-  const slug = params['*'];
+  const slug = params.slug;
   if (!slug) throw new Response('Not found', { status: 404 });
 
   console.dir({ slug, a: __dirname });
@@ -23,7 +23,8 @@ export const loader: LoaderFunction = async ({ params }) => {
   }
 };
 
-export default function Post() {
+export default function PostRoute() {
+  console.log('there');
   const { code, frontmatter } = useLoaderData<LoaderData>();
   const Component = useMemo(() => getMDXComponent(code), [code]);
 
