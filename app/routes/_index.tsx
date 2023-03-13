@@ -1,34 +1,26 @@
-import { json } from '@remix-run/node'; // or cloudflare/deno
 import { Link, useLoaderData } from '@remix-run/react';
 
-import * as postA from './posts/test.mdx';
+import { getPosts } from '~/utils/post';
+import type { Post } from '~/utils/post';
+import { type LoaderFunction } from '@remix-run/node';
 
-function postFromModule(mod: any) {
-  return {
-    slug: mod.filename.replace(/\.mdx?$/, ''),
-    ...mod.attributes.meta,
-  };
-}
+export const loader: LoaderFunction = async () => {
+  return getPosts();
+};
 
-export async function loader() {
-  // Return metadata about each of the posts for display on the index page.
-  // Referencing the posts here instead of in the Index component down below
-  // lets us avoid bundling the actual posts themselves in the bundle for the
-  // index page.
-  return json([postFromModule(postA)]);
-}
-
-export default function Index() {
-  const posts = useLoaderData<typeof loader>();
+export default function Posts() {
+  const posts = useLoaderData<Post[]>();
 
   return (
-    <ul>
-      {posts.map((post) => (
-        <li key={post.slug}>
-          <Link to={post.slug}>{post.title}</Link>
-          {post.description ? <p>{post.description}</p> : null}
-        </li>
-      ))}
-    </ul>
+    <div>
+      <h1>Posts</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.slug}>
+            <Link to={`/posts/${post.slug}`}>{post.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
