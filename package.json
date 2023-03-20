@@ -11,13 +11,16 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@mdx-js/esbuild": "^2.3.0",
     "@remix-run/architect": "^1.14.1",
     "@remix-run/node": "^1.14.1",
     "@remix-run/react": "^1.14.1",
     "cross-env": "^7.0.3",
+    "format": "^0.2.2",
     "front-matter": "^4.0.2",
     "isbot": "latest",
     "mdx-bundler": "^9.2.1",
+    "micromark-extension-frontmatter": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-autolink-headings": "^6.1.1",
