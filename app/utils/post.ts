@@ -2,6 +2,9 @@ import parseFrontMatter from 'front-matter';
 import fs from 'fs/promises';
 import path from 'path';
 import { bundleMDX } from './mdx.server';
+import remarkFootnotes from 'remark-footnotes';
+import remarkMdxImages from 'remark-mdx-images';
+import remarkBreaks from 'remark-breaks';
 
 export type Post = {
   slug: string;
@@ -28,10 +31,10 @@ export async function getPost(slug: string) {
     mdxOptions(options, frontmatter) {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
-        // remarkMdxImages,
+        remarkMdxImages,
         remarkGfm,
-        // remarkBreaks,
-        // [remarkFootnotes, { inlineNotes: true }],
+        remarkBreaks,
+        [remarkFootnotes, { inlineNotes: true }],
       ];
       options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypeAutolinkHeadings, rehypeSlug, rehypeToc];
 
