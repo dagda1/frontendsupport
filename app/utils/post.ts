@@ -6,17 +6,8 @@ import remarkFootnotes from 'remark-footnotes';
 import remarkMdxImages from 'remark-mdx-images';
 import remarkBreaks from 'remark-breaks';
 import { remarkCodeTitles } from './remark-code-title';
-import { remarkImgToJsx } from './remark-img-to-jsx';
-// Rehype packages
-import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeKatex from 'rehype-katex';
-import rehypeCitation from 'rehype-citation';
-import rehypePrismPlus from 'rehype-prism-plus';
-import rehypePresetMinify from 'rehype-preset-minify';
-import { remarkInlineCodeLanguage } from './remark-inline-code-language';
-import rehypeRaw from 'rehype-raw';
-import remarkMath from 'remark-math';
+
+// import { remarkInlineCodeLanguage } from './remark-inline-code-language';
 
 export type Post = {
   slug: string;
@@ -30,15 +21,20 @@ export type PostMarkdownAttributes = {
 const root = process.cwd();
 
 export async function getPost(slug: string) {
-  console.dir({ slug, a: __dirname });
   const source = await fs.readFile(path.join(`${__dirname}/../blog-posts`, `${slug}.mdx`), 'utf-8');
 
-  console.dir({ source });
   const { default: remarkGfm } = await import('remark-gfm');
   const { default: rehypeAutolinkHeadings } = await import('rehype-autolink-headings');
 
   const { default: rehypeToc } = await import('rehype-toc');
   const { default: rehypeSlug } = await import('rehype-slug');
+  const { default: remarkMath } = await import('remark-math');
+
+  const { default: rehypeKatex } = await import('rehype-katex');
+  const { default: rehypeCitation } = await import('rehype-citation');
+  const { default: rehypePrismPlus } = await import('rehype-prism-plus');
+  const { default: rehypeRaw } = await import('rehype-raw');
+  const { default: rehypePresetMinify } = await import('rehype-preset-minify');
 
   const post = await bundleMDX({
     source,
@@ -49,7 +45,7 @@ export async function getPost(slug: string) {
         remarkGfm,
         remarkBreaks,
         remarkCodeTitles,
-        remarkInlineCodeLanguage,
+        // remarkInlineCodeLanguage,
         [remarkFootnotes, { inlineNotes: true }],
         remarkMath,
 

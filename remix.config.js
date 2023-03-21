@@ -61,7 +61,6 @@ module.exports = {
     /^space.*/,
     /^tr46.*/,
     /^trough.*/,
-    /^uglify-.*/,
     /^unified.*/,
     /^unist.*/,
     /^vfile.*/,
