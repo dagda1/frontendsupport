@@ -5,6 +5,18 @@ import { bundleMDX } from './mdx.server';
 import remarkFootnotes from 'remark-footnotes';
 import remarkMdxImages from 'remark-mdx-images';
 import remarkBreaks from 'remark-breaks';
+import { remarkCodeTitles } from './remark-code-title';
+import { remarkImgToJsx } from './remark-img-to-jsx';
+// Rehype packages
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeKatex from 'rehype-katex';
+import rehypeCitation from 'rehype-citation';
+import rehypePrismPlus from 'rehype-prism-plus';
+import rehypePresetMinify from 'rehype-preset-minify';
+import { remarkInlineCodeLanguage } from './remark-inline-code-language';
+import rehypeRaw from 'rehype-raw';
+import remarkMath from 'remark-math';
 
 export type Post = {
   slug: string;
@@ -14,6 +26,8 @@ export type Post = {
 export type PostMarkdownAttributes = {
   title: string;
 };
+
+const root = process.cwd();
 
 export async function getPost(slug: string) {
   console.dir({ slug, a: __dirname });
@@ -34,9 +48,36 @@ export async function getPost(slug: string) {
         remarkMdxImages,
         remarkGfm,
         remarkBreaks,
+        remarkCodeTitles,
+        remarkInlineCodeLanguage,
         [remarkFootnotes, { inlineNotes: true }],
+        remarkMath,
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // remarkImgToJsx as any,
       ];
-      options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypeAutolinkHeadings, rehypeSlug, rehypeToc];
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        rehypeAutolinkHeadings,
+        rehypeSlug,
+        rehypeToc,
+        rehypeKatex,
+        [rehypeCitation, { path: path.join(root, 'data') }],
+        [rehypePrismPlus, { ignoreMissing: true }],
+        rehypePresetMinify,
+        [
+          rehypeRaw,
+          {
+            passThrough: [
+              'mdxjsEsm',
+              'mdxFlowExpression',
+              'mdxTextExpression',
+              'mdxJsxFlowElement',
+              'mdxJsxTextElement',
+            ],
+          },
+        ],
+      ];
 
       return options;
     },
