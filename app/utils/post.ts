@@ -7,7 +7,7 @@ import remarkMdxImages from 'remark-mdx-images';
 import remarkBreaks from 'remark-breaks';
 import { remarkCodeTitles } from './remark-code-title';
 
-// import { remarkInlineCodeLanguage } from './remark-inline-code-language';
+import { remarkInlineCodeLanguageCreator } from './remark-inline-code-language';
 
 export type Post = {
   slug: string;
@@ -36,6 +36,8 @@ export async function getPost(slug: string) {
   const { default: rehypeRaw } = await import('rehype-raw');
   const { default: rehypePresetMinify } = await import('rehype-preset-minify');
 
+  const remarkInlineCodeLanguage = await remarkInlineCodeLanguageCreator();
+
   const post = await bundleMDX({
     source,
     mdxOptions(options, frontmatter) {
@@ -45,7 +47,7 @@ export async function getPost(slug: string) {
         remarkGfm,
         remarkBreaks,
         remarkCodeTitles,
-        // remarkInlineCodeLanguage,
+        remarkInlineCodeLanguage,
         [remarkFootnotes, { inlineNotes: true }],
         remarkMath,
 

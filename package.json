@@ -10,6 +10,7 @@
     "start": "cross-env NODE_ENV=production arc sandbox",
     "typecheck": "tsc"
   },
+  "main": "dist/index.js",
   "dependencies": {
     "@cutting/util": "^4.57.1",
     "@mdx-js/esbuild": "^2.3.0",
