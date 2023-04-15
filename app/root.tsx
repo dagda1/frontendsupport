@@ -1,7 +1,8 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, NavLink } from '@remix-run/react';
 import rehypeStyles from './rehype.css';
-import katex from 'katex/dist/katex.min.css'
+import katex from 'katex/dist/katex.min.css';
+import stylesheet from "~/tailwind.css";
 
 
 export const meta: MetaFunction = () => ({
@@ -24,6 +25,7 @@ const Nav = () => {
 };
 
 export const links: LinksFunction = () => ([
+  { rel: "stylesheet", href: stylesheet },
   {
     rel: 'stylesheet', href: rehypeStyles
   },
