@@ -48,7 +48,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="border-8 border-red-500 min-h-full h-full grid grid-rows-[auto,1fr,auto]">
+      <body className="border-white border-8 md:border-purple-500 md:border-8  xl:border-green-500 xl:border-8 2xl:border-8 2xl:border-red-500  bg-black text-white  min-h-full h-full grid grid-rows-[auto,1fr,auto]">
         <header>
           <Nav />
         </header>
