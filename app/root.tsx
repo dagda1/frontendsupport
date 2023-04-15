@@ -13,7 +13,8 @@ export const meta: MetaFunction = () => ({
 const Nav = () => {
   return (
     <nav>
-      <ul className="flex flex-wrap items-center">
+      <ul className="flex flex-wrap items-center mr-2">
+        <li className="mr-2">Frontend Support</li>
         <li className="mr-2">
           <NavLink to="/" end>
             Home
@@ -46,27 +47,21 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="border-white border-8 md:border-purple-500 md:border-8  xl:border-green-500 xl:border-8 2xl:border-8 2xl:border-red-500  bg-black text-white  min-h-full h-full grid grid-rows-[auto,1fr,auto]">
-        <header className="grid md:grid-cols-[20%,1fr,20%]">
-          <div />
+      <body className="border-white border-8 md:border-purple-500 md:border-8   lg:border-gray-500 lg:border-8  xl:border-green-500 xl:border-8 2xl:border-8 2xl:border-red-500  bg-black text-white  min-h-full h-full grid grid-rows-[auto,1fr,auto] px-4 md:px-6 lg:px-[10%] xl:px-[20%] 2xl:px-[25%]">
+        <header className="grid">
           <header className="border-8 border-cyan-500">
             <Nav />
           </header>
-          <div />
         </header>
-        <main className="border-8 border-blue-500 grid md:grid-cols-[20%,1fr,20%]">
-          <div />
+        <main className="border-8 border-blue-500 grid">
           <Outlet />
-          <div />
         </main>
+        <footer className="border-8 border-yellow-300 grid">
+          <section>footer</section>
+        </footer>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <footer className="border-8 border-yellow-300 grid md:grid-cols-[20%,1fr,20%]">
-          <div />
-          <section>footer</section>
-          <div />
-        </footer>
       </body>
     </html>
   );
