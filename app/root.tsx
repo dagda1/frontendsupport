@@ -2,8 +2,7 @@ import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, NavLink } from '@remix-run/react';
 import rehypeStyles from './rehype.css';
 import katex from 'katex/dist/katex.min.css';
-import stylesheet from "~/tailwind.css";
-
+import stylesheet from '~/tailwind.css';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -24,15 +23,17 @@ const Nav = () => {
   );
 };
 
-export const links: LinksFunction = () => ([
-  { rel: "stylesheet", href: stylesheet },
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: stylesheet },
   {
-    rel: 'stylesheet', href: rehypeStyles
+    rel: 'stylesheet',
+    href: rehypeStyles,
   },
   {
-    rel: 'stylesheet', href: katex
-  }
-])
+    rel: 'stylesheet',
+    href: katex,
+  },
+];
 
 export default function App() {
   return (
