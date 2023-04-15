@@ -13,11 +13,17 @@ export const meta: MetaFunction = () => ({
 const Nav = () => {
   return (
     <header>
-      <nav>
-        <NavLink to="/" end>
-          Home
-        </NavLink>
-        <NavLink to="/posts">Articles</NavLink>
+      <nav className="border-8 border-cyan-500">
+        <ul className="flex flex-wrap items-center">
+          <li className="mr-2">
+            <NavLink to="/" end>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/posts">Articles</NavLink>
+          </li>
+        </ul>
       </nav>
     </header>
   );
@@ -37,16 +43,24 @@ export const links: LinksFunction = () => [
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
         <Meta />
         <Links />
       </head>
-      <body>
-        <Outlet />
+      <body className="border-8 border-red-500 min-h-full h-full grid grid-rows-[auto,1fr,auto]">
+        <header>
+          <Nav />
+        </header>
+        <main className="border-8 border-blue-500">
+          <Outlet />
+        </main>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <footer className="border-8 border-yellow-300">
+          <section>footer</section>
+        </footer>
       </body>
     </html>
   );
