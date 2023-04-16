@@ -13,20 +13,18 @@ export function Overlay() {
           delay: 6,
         }}
       >
-        <h3>ANDERSONMANCINI.DEV</h3>
-        <motion.button
+        <h3>FRONTEND SUPPORT</h3>
+        <motion.a
           animate={{ translateX: '0%', opacity: 1 }}
           initial={{ translateX: '-120%', opacity: 0 }}
           transition={{
             delay: 2.6,
           }}
           className="ctaButton contact"
-          onClick={() => {
-            window.open('https://andersonmancini.dev', 'tab');
-          }}
+          href="https://cutting.scot"
         >
           GET IN TOUCH
-        </motion.button>
+        </motion.a>
       </motion.header>
       <section className="overlay">
         <motion.h1
@@ -37,7 +35,7 @@ export function Overlay() {
             delay: 2.5,
           }}
         >
-          Unlocking your hidden Threejs super powers
+          STRUGGLING TO DELIVER FRONTEND FEATURES?
         </motion.h1>
         <motion.button
           animate={{ translateX: '0%', opacity: 1 }}
@@ -50,10 +48,10 @@ export function Overlay() {
             window.open('https://andersonmancini.dev', 'tab');
           }}
         >
-          BROWSE MY RECENT WORK
+          FIND OUT HOW WE CAN HELP
         </motion.button>
       </section>
-      <footer>Website under development. Tap anywhere to change colors</footer>
+      <footer>footer</footer>
     </div>
   );
 }

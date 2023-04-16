@@ -13,6 +13,7 @@ export default function Home() {
     <article>
       <Canvas
         id="my-canvas"
+        className="fixed"
         gl={{
           antialias: false,
           toneMapping: ACESFilmicToneMapping,

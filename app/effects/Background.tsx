@@ -3,8 +3,12 @@ import { Plane, useTexture } from '@react-three/drei';
 import { RepeatWrapping, Vector2 } from 'three';
 
 export function Background() {
-  const height = useTexture('./displacement.jpg');
-  const normal = useTexture('./NormalMap2.png');
+  const height = useTexture(
+    'https://uploads.codesandbox.io/uploads/user/b329f342-d890-4a7f-a99a-fae86a17ef85/Qux6-jungle_displacement_01.jpg',
+  );
+  const normal = useTexture(
+    'https://uploads.codesandbox.io/uploads/user/2b85d171-f237-433a-a9b2-fa7fc8714496/aYIW-NormalMap2.png',
+  );
 
   normal.anisotropy = 16;
 
