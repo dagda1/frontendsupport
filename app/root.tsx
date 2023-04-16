@@ -1,32 +1,15 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, NavLink } from '@remix-run/react';
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import rehypeStyles from './rehype.css';
 import katex from 'katex/dist/katex.min.css';
 import stylesheet from '~/tailwind.css';
+import { Nav } from './Nav/Top';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'New Remix App',
   viewport: 'width=device-width,initial-scale=1',
 });
-
-const Nav = () => {
-  return (
-    <nav>
-      <ul className="flex flex-wrap items-center mr-2">
-        <li className="mr-2">Frontend Support</li>
-        <li className="mr-2">
-          <NavLink to="/" end>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/posts">Articles</NavLink>
-        </li>
-      </ul>
-    </nav>
-  );
-};
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: stylesheet },
@@ -47,7 +30,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="border-white border-8 md:border-purple-500 md:border-8   lg:border-gray-500 lg:border-8  xl:border-green-500 xl:border-8 2xl:border-8 2xl:border-red-500  bg-black text-white  min-h-full h-full grid grid-rows-[auto,1fr,auto] px-4 md:px-6 lg:px-[10%] xl:px-[20%] 2xl:px-[25%]">
+      <body className="border-white border-8 md:border-purple-500 md:border-8 lg:border-gray-500 lg:border-8  xl:border-green-500 xl:border-8 2xl:border-8 2xl:border-red-500  bg-black text-white  min-h-full h-full grid grid-rows-[auto,1fr,auto] px-4 md:px-6 lg:px-[10%] xl:px-[20%] 2xl:px-[25%]">
         <header className="grid">
           <header className="border-8 border-cyan-500">
             <Nav />
