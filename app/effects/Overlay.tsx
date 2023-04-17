@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { Nav } from '~/Nav/Top';
+import { CTAButton } from '~/components/CTAButton/CTAButton';
 
 export function Overlay() {
   return (
@@ -13,23 +15,22 @@ export function Overlay() {
           delay: 6,
         }}
       >
-        <h3>FRONTEND SUPPORT</h3>
-        <motion.a
+        <Nav />
+        <motion.span
           animate={{ translateX: '0%', opacity: 1 }}
           initial={{ translateX: '-120%', opacity: 0 }}
           transition={{
             delay: 2.6,
           }}
-          className="ctaButton contact"
-          href="https://cutting.scot"
         >
-          GET IN TOUCH
-        </motion.a>
+          <CTAButton />
+        </motion.span>
       </motion.header>
       <section className="overlay">
         <motion.h1
           animate={{ translateX: '0%', opacity: 1 }}
           initial={{ translateX: '-100%', opacity: 0 }}
+          className="text-9xl"
           transition={{
             duration: 1.8,
             delay: 2.5,
