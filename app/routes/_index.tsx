@@ -20,6 +20,7 @@ export default function Home() {
           outputEncoding: LinearToneMapping as any,
           toneMappingExposure: 3,
         }}
+        dpr={1}
       >
         <Suspense fallback={null}>
           <LightSource />

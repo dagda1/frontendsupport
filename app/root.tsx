@@ -5,6 +5,8 @@ import katex from 'katex/dist/katex.min.css';
 import tailwindCss from '~/tailwind.css';
 import { Nav } from './Nav/Top';
 import styles from '~/styles.css';
+import displacement from '~/images/displacement.jpg';
+import normalMap from '~/images/NormalMap2.png';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -25,6 +27,16 @@ export const links: LinksFunction = () => [
   {
     rel: 'stylesheet',
     href: styles,
+  },
+  {
+    rel: 'preload',
+    href: displacement,
+    as: 'image',
+  },
+  {
+    rel: 'preload',
+    href: normalMap,
+    as: 'image',
   },
 ];
 

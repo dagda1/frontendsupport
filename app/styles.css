@@ -78,8 +78,45 @@ footer {
   right: 3%;
 }
 
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 8vh;
+    width: 100%;
+  }
+
+  .overlay {
+    padding: 10%;
+  }
+
+  .ctaButton {
+    width: max-content;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    font-family: "Rubik", sans-serif;
+    transition: all 0.8s ease-in-out;
+  }
+
+  footer {
+    width: 100%;
+    left: 40px;
+    font-size: 0.4em;
+  }
+
+  .contact {
+    margin: 0;
+    font-size: 0.4em;
+  }
+}
+
+
 .works {
   width: 100%;
+  /* height: 300vh; */
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -165,10 +202,12 @@ footer {
     width: 100%;
     left: 40px;
     font-size: 0.4em;
+    /* text-align: center; */
   }
 
   .works {
     width: 100%;
+    /* height: 300vh; */
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -213,3 +252,4 @@ footer {
     gap: 2em;
   }
 }
+

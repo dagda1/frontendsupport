@@ -1,24 +1,24 @@
 import { useThree } from '@react-three/fiber';
 import { Plane, useTexture } from '@react-three/drei';
 import { RepeatWrapping, Vector2 } from 'three';
+import displacement from '~/images/displacement.jpg';
+import normalMap2 from '~/images/NormalMap2.png';
 
+console.log(displacement);
 export function Background() {
-  const height = useTexture(
-    'https://uploads.codesandbox.io/uploads/user/b329f342-d890-4a7f-a99a-fae86a17ef85/Qux6-jungle_displacement_01.jpg',
-  );
-  const normal = useTexture(
-    'https://uploads.codesandbox.io/uploads/user/2b85d171-f237-433a-a9b2-fa7fc8714496/aYIW-NormalMap2.png',
-  );
+  const { displacementMap, normalMap } = useTexture({ displacementMap: displacement, normalMap: normalMap2 });
 
-  normal.anisotropy = 16;
+  console.log(displacementMap, normalMap);
 
-  normal.wrapS = normal.wrapT = RepeatWrapping;
-  normal.repeat = new Vector2(3, 30);
+  normalMap.anisotropy = 16;
 
-  height.wrapS = height.wrapT = RepeatWrapping;
-  height.repeat = new Vector2(1, 2);
+  normalMap.wrapS = normalMap.wrapT = RepeatWrapping;
+  normalMap.repeat = new Vector2(3, 3);
 
-  height.anisotropy = 16;
+  displacementMap.wrapS = displacementMap.wrapT = RepeatWrapping;
+  displacementMap.repeat = new Vector2(1, 1);
+
+  displacementMap.anisotropy = 16;
   const viewport = useThree((state) => state.viewport);
 
   return (
@@ -33,10 +33,10 @@ export function Background() {
           color="#121423"
           metalness={0.9}
           roughness={0.3}
-          displacementMap={height}
+          displacementMap={displacementMap}
           displacementScale={0.1}
-          normalMap={normal}
-          normalScale={new Vector2(1, 1)}
+          normalMap={normalMap}
+          normalScale={0.25 as any}
         />
       </Plane>
     </group>
