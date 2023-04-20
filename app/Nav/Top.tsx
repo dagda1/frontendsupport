@@ -8,7 +8,7 @@ const MenuItems: NavLinkProps[] = [
 
 export const Nav = () => {
   return (
-    <nav>
+    <nav className="text-3xl">
       <ul className="flex flex-wrap items-center mr-2">
         {MenuItems.map(({ to, children }, i) => (
           <li className="mr-2" key={i}>

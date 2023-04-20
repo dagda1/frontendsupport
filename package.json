@@ -30,6 +30,7 @@
     "format": "^0.2.2",
     "front-matter": "^4.0.2",
     "github-slugger": "^2.0.0",
+    "gsap": "^3.11.5",
     "isbot": "latest",
     "image-size": "^1.0.2",
     "is-buffer": "^2.0.5",

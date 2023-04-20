@@ -65,5 +65,6 @@ module.exports = {
     /^whatwg-url.*/,
     /^web-namespaces.*/,
     /^zwitch.*/,
+    /^gsap.*/,
   ],
 };

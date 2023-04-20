@@ -11,8 +11,8 @@ import { Cursor } from '~/components/Cursor/Cursor';
 
 export default function Home() {
   return (
-    <article>
-      <Canvas
+    <>
+      {/* <Canvas
         id="my-canvas"
         className="fixed"
         gl={{
@@ -30,10 +30,10 @@ export default function Home() {
         </Suspense>
         <Leva collapsed hidden />
       </Canvas>
-      <Cursor />
+      <Cursor /> */}
 
       <Overlay />
       <Loader />
-    </article>
+    </>
   );
 }

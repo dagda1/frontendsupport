@@ -55,6 +55,9 @@ dependencies:
   github-slugger:
     specifier: ^2.0.0
     version: 2.0.0
+  gsap:
+    specifier: ^3.11.5
+    version: 3.11.5
   image-size:
     specifier: ^1.0.2
     version: 1.0.2
@@ -7631,6 +7634,10 @@ packages:
       kind-of: 6.0.3
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
+
+  /gsap@3.11.5:
+    resolution: {integrity: sha512-Q89nKCLgoX5xUjznh9LcaIUkz54k1voNucT1Rpf9SJNFIQznBwFqt5qUUQbeVInFyN/n18OUJkpeI6CNEDt74w==}
+    dev: false
 
   /gunzip-maybe@1.4.2:
     resolution: {integrity: sha512-4haO1M4mLO91PW57BMsDFf75UmwoRX0GkdD+Faw+Lr+r/OZrOCS0pIBwOL1xCKQqnQzbNFGgK2V2CpBUPeFNTw==}

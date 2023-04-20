@@ -1,8 +1,7 @@
 export function Cursor(): JSX.Element {
   return (
     <>
-      <div className="cursor rounded relative z-10 w-7 h-7 border-solid border-2 border-white"></div>
-      <div className="cursor pointed relative z-10"></div>
+      <div className="cursor relative z-10 w-20 h-20 border-solid border-2 bg-white rounded-full"></div>
     </>
   );
 }
