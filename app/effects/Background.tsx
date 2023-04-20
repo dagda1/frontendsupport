@@ -4,11 +4,8 @@ import { RepeatWrapping, Vector2 } from 'three';
 import displacement from '~/images/displacement.jpg';
 import normalMap2 from '~/images/NormalMap2.png';
 
-console.log(displacement);
 export function Background() {
   const { displacementMap, normalMap } = useTexture({ displacementMap: displacement, normalMap: normalMap2 });
-
-  console.log(displacementMap, normalMap);
 
   normalMap.anisotropy = 16;
 

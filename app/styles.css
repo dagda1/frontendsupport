@@ -3,8 +3,6 @@
 
 * {
   box-sizing: border-box;
-  user-select: none;
-  pointer-events: none;
 }
 
 #my-canvas {

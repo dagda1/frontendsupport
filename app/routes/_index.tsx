@@ -7,6 +7,7 @@ import { Leva } from 'leva';
 import { Overlay } from '~/effects/Overlay';
 import { Background } from '~/effects/Background';
 import Effects from '~/effects/Effects';
+import { Cursor } from '~/components/Cursor/Cursor';
 
 export default function Home() {
   return (
@@ -29,6 +30,8 @@ export default function Home() {
         </Suspense>
         <Leva collapsed hidden />
       </Canvas>
+      <Cursor />
+
       <Overlay />
       <Loader />
     </article>
