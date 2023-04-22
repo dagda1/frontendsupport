@@ -15,19 +15,17 @@ body {
   font-family: "Bebas Neue", cursive;
 }
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 .overlay {
   border: 10px solid #ffffff;
+  background-color: pink;
+  color: #000000;
 }
 
 .works{
   border: 10px solid purple;
+  background-color: blue;
+  color: #000000;
 }
+
+.overlay, .works {}
 
