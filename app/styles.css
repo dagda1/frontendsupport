@@ -21,11 +21,13 @@ body {
   color: #000000;
 }
 
-.works{
-  border: 10px solid purple;
-  background-color: blue;
-  color: #000000;
+section {
+  border: 10px solid white;
 }
 
-.overlay, .works {}
+.breakglass{
+}
+
+.overlay, .breakglass {
+}
 
