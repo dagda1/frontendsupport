@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@cutting/hooks':
+    specifier: ^4.56.1
+    version: 4.56.1(react-dom@18.2.0)(react@18.2.0)
   '@cutting/util':
     specifier: ^4.58.2
     version: 4.58.2
@@ -31,6 +34,9 @@ dependencies:
   '@studio-freight/lenis':
     specifier: ^1.0.6
     version: 1.0.6
+  assert-ts:
+    specifier: ^0.3.4
+    version: 0.3.4
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
@@ -2967,6 +2973,24 @@ packages:
       '@citation-js/core': 0.6.5
       '@citation-js/date': 0.5.1
       citeproc: 2.4.62
+    dev: false
+
+  /@cutting/hooks@4.56.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-UTlo3W+DqGn+I7Rublv8D5CZjUzbN2TYm/brwa7G5HekQ/bkUGYb0P7VSAZxaloM6o9QKOZEUvIRG8yKt3p0Kw==}
+    peerDependencies:
+      react: '>= 18.x.x'
+      react-dom: '>= 18.x.x'
+    dependencies:
+      '@cutting/util': 4.58.1
+      assert-ts: 0.3.4
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@cutting/util@4.58.1:
+    resolution: {integrity: sha512-Am7wlfoRhUU2+pFshDgI4YLv37kA2RRnZiw3CWiydHA7Gutf93bcPRd1VFUAVUq/CaVy97n8ZHwYOgHCf4NyLA==}
+    dependencies:
+      assert-ts: 0.3.4
     dev: false
 
   /@cutting/util@4.58.2:

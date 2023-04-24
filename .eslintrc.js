@@ -2,6 +2,18 @@
 module.exports = {
   extends: ['@remix-run/eslint-config', '@remix-run/eslint-config/node', 'plugin:prettier/recommended'],
   rules: {
+    'react-hooks/rules-of-hooks': [
+      'error',
+      {
+        additionalHooks: '(useIsomorphicLayoutEffect)',
+      },
+    ],
+    'react-hooks/exhaustive-deps': [
+      'error',
+      {
+        additionalHooks: '(useIsomorphicLayoutEffect)',
+      },
+    ],
     'prettier/prettier': [
       'error',
       {

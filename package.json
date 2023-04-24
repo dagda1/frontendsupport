@@ -13,6 +13,7 @@
   "main": "dist/index.js",
   "dependencies": {
     "@cutting/util": "^4.58.2",
+    "@cutting/hooks": "^4.56.1",
     "@mdx-js/esbuild": "^2.3.0",
     "@react-three/drei": "^9.65.3",
     "@react-three/fiber": "^8.12.1",
@@ -22,6 +23,7 @@
     "@remix-run/node": "^1.15.0",
     "@remix-run/react": "^1.15.0",
     "@jsdevtools/rehype-toc": "^3.0.2",
+    "assert-ts": "^0.3.4",
     "cross-env": "^7.0.3",
     "escape-string-regexp": "^5.0.0",
     "extend": "^3.0.2",

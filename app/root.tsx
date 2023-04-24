@@ -42,16 +42,18 @@ export const links: LinksFunction = () => [
 
 export default function App() {
   return (
-    <html lang="en" className="h-full m-0 p-0">
+    <html lang="en">
       <head>
         <Meta />
         <Links />
       </head>
-      <body className="bg-black text-white  grid grid-rows-[auto,1fr,auto] px-4 md:px-6 lg:px-[10%] xl:px-[20%] 2xl:px-[25%] overflow-x-hidden h-full m-0 p-0">
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
+      <body>
+        <div id="root">
+          <Outlet />
+          {/* <ScrollRestoration /> */}
+          <Scripts />
+          <LiveReload />
+        </div>
       </body>
     </html>
   );

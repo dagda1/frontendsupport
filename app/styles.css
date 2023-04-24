@@ -21,13 +21,49 @@ body {
   color: #000000;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: 10px solid green;
+  overflow-x: hidden;
+}
+
+
+main {
+  border: 10px solid green;
+}
+
 section {
+  height: 100%;
   border: 10px solid white;
 }
 
-.breakglass{
+#root {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-.overlay, .breakglass {
+section {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-rows: 1fr;
+  height: 100%;
+  border: 10px solid white;
 }
 
+.breaking {
+  display: flex;
+  font-size: 8vw;
+  border: 10px solid yellow;
+}
