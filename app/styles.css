@@ -1,6 +1,6 @@
 /*styles.css*/
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@300&display=swap");
-
+ 
 * {
   box-sizing: border-box;
 }
@@ -11,59 +11,108 @@
   left: 0;
 }
 
+html, body {
+  margin: 0;
+  height: 100%;
+  font-weight: 300;
+}
+html {
+  scroll-behavior: auto;
+}
+
 body {
   font-family: "Bebas Neue", cursive;
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .overlay {
-  border: 10px solid #ffffff;
-  background-color: pink;
-  color: #000000;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: #1e1e1e;
-  color: #fff;
-  border: 10px solid green;
-  overflow-x: hidden;
-}
-
-
-main {
-  border: 10px solid green;
-}
-
-section {
-  height: 100%;
-  border: 10px solid white;
-}
-
-#root {
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-section {
-  display: grid;
-  place-content: center;
-  place-items: center;
-  grid-template-rows: 1fr;
-  height: 100%;
-  border: 10px solid white;
-}
-
-.breaking {
+.overlay {
   display: flex;
-  font-size: 8vw;
-  border: 10px solid yellow;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#panels #panels-container {
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+#panels #panels-container .panel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #333;
+  text-align: left;
+  border-right: 1px solid #f00;
+}
+
+.panel {
+	width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#panels #panels-container .panel img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#panels #panels-container .panel .panels-navigation {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+#panels #panels-container .panel .anchor-panel,
+#panels #panels-container .panel .nav-panel {
+  color: #000;
+  text-transform: uppercase;
+  margin-right: 2rem;
+}
+
+#panels #panels-container .panels-navigation {
+  position: absolute;
+  width: 100%;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+
+.full-screen {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
