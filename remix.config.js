@@ -66,6 +66,6 @@ module.exports = {
     /^web-namespaces.*/,
     /^zwitch.*/,
     /^gsap.*/,
-    /^@cutting\/hooks.*/,
+    /^@cutting\/.*/,
   ],
 };

@@ -30,89 +30,31 @@ body {
   overflow-y: scroll;
 }
 
-.overlay {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.overlay {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 #panels #panels-container {
-  height: 100vh;
-  display: flex;
-  flex-wrap: nowrap;
-  padding: 0;
-  overflow: hidden;
-  background-color: #ddd;
+}
+
+main {
+  border: 10px solid gold;
 }
 
 #panels #panels-container .panel {
-  position: relative;
+  /* position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   color: #333;
-  text-align: left;
+  text-align: left; */
   border-right: 1px solid #f00;
-}
-
-.panel {
-	width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  font-size: 1.5em;
-  text-align: center;
-  color: white;
-  position: relative;
-  box-sizing: border-box;
-  padding: 10px;
-}
-
-#panels #panels-container .panel img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-#panels #panels-container .panel .panels-navigation {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-#panels #panels-container .panel .anchor-panel,
-#panels #panels-container .panel .nav-panel {
-  color: #000;
-  text-transform: uppercase;
-  margin-right: 2rem;
-}
-
-#panels #panels-container .panels-navigation {
-  position: absolute;
-  width: 100%;
-  bottom: 2rem;
-  right: 2rem;
 }
 
 
 .full-screen {
-  display: block;
-  width: 100%;
+  /* width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: hidden; */
+}
+
+.breaking {
+  border: 10px solid red;
 }
