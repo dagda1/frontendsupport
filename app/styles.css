@@ -14,47 +14,38 @@
 html, body {
   margin: 0;
   height: 100%;
+  width: 100%;
   font-weight: 300;
 }
 html {
-  scroll-behavior: auto;
+  /* scroll-behavior: auto; */
+  /* overflow-x: hidden; */
+  /* overflow-y: scroll; */
 }
 
 body {
   font-family: "Bebas Neue", cursive;
-  scroll-behavior: auto;
+  /* scroll-behavior: auto; */
 }
 
 body {
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 #panels #panels-container {
 }
 
 main {
-  border: 10px solid gold;
-}
-
-#panels #panels-container .panel {
-  /* position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  color: #333;
-  text-align: left; */
-  border-right: 1px solid #f00;
 }
 
 
 .full-screen {
-  /* width: 100%;
+  display: block;
+  width: 100%;
   height: 100vh;
-  overflow: hidden; */
+  overflow: hidden;
 }
 
 .breaking {
-  border: 10px solid red;
+  /* border: 10px solid red; */
 }

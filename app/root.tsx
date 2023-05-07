@@ -3,16 +3,17 @@ import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@re
 import rehypeStyles from './rehype.css';
 import katex from 'katex/dist/katex.min.css';
 import tailwindCss from '~/tailwind.css';
-import { Nav } from './Nav/Top';
 import styles from '~/styles.css';
 import displacement from '~/images/displacement.jpg';
 import normalMap from '~/images/NormalMap2.png';
 
-export const meta: MetaFunction = () => ({
-  charset: 'utf-8',
-  title: 'New Remix App',
-  viewport: 'width=device-width,initial-scale=1',
-});
+export const meta = () => [
+  {
+    charset: 'utf-8',
+    title: 'Frontend Support',
+    viewport: 'width=device-width,initial-scale=1',
+  },
+];
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: tailwindCss },
