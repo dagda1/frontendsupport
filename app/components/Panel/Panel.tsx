@@ -10,10 +10,7 @@ interface PanelProps {
 export function Panel({ className, innerRef, ...props }: PanelProps) {
   return (
     <article
-      className={cs(
-        'panel h-screen w-full overflow-hidden flex flex-col justify-center items-center relative p-0',
-        className,
-      )}
+      className={cs('panel h-full w-full flex flex-1 justify-center items-center relative p-0', className)}
       ref={innerRef}
       {...props}
     />

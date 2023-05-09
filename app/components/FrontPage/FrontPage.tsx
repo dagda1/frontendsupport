@@ -9,7 +9,7 @@ interface PageProps {
 export function FrontPage({ className, innerRef, ...props }: PageProps): JSX.Element {
   return (
     <section
-      className={cs('flex front flex-col h-screen w-full overflow-hidden items-center justify-center', className)}
+      className={cs('flex front flex-col h-full w-full overflow-hidden items-center justify-center', className)}
       ref={innerRef}
       {...props}
     />

@@ -126,7 +126,7 @@ export function Overlay() {
 
   return (
     <>
-      <header className="fixed bg-inherit w-full flex sm:justify-between px-2 sm:px-10 py-10 pb-5 z-10">
+      {/* <header className="fixed bg-inherit w-full flex sm:justify-between px-2 sm:px-10 py-10 pb-5 z-10">
         <div>
           <TopNav />
         </div>
@@ -135,13 +135,16 @@ export function Overlay() {
             <CTAButton />
           </span>
         </div>
-      </header>
-      <main ref={mainRef}>
+      </header> */}
+      <main className="h-full overflow-x-hidden overflow-y-scroll" ref={mainRef}>
         <FrontPage
           innerRef={overlay}
           className="border-8 border-solid sm:border-pink-500 border-green-500 md:border-yellow-500 lg:border-slate-500 xl:border-red-500 2xl:border-cyan-500"
         >
-          <h1 ref={heading} className="text-6xl sm:text-8xl xl:text-9xl w-50p mt-20 lg:mt-12 xl:mt-3 text-center">
+          <h1
+            ref={heading}
+            className="text-6xl sm:text-8xl xl:text-7xl 2xl:text-7xl w-50p mt-20 lg:mt-12 xl:mt-10 text-center"
+          >
             STRUGGLING TO DELIVER FRONTEND FEATURES?
           </h1>
           <button
@@ -151,45 +154,39 @@ export function Overlay() {
             FIND OUT HOW WE CAN HELP
           </button>
         </FrontPage>
-        <section id="panels">
-          <div
-            id="panels-container"
-            className="h-screen flex flex-nowrap p-0 overflow-hidden"
-            style={{ width: '400%' }}
-          >
-            {/* <Panel className="bg-breakglass">
-              <div ref={breakglass} className="flex breaking justify-center flex-1">
-                <img ref={imgLeft} alt="breaking glass left" className="bglass-left glass" src={breakglassLeft} />
-                <img alt="breaking glass right" className="bglass-right glass" src={breakglassRight} />
-              </div>
-            </Panel> */}
-            <Panel className="panel2 bg-white text-black items">
-              <H1>We can help if...</H1>
-              <ul className="flex flex-col items-center h-full justify-evenly">
-                <li>You need to get it right the first time</li>
-                <li>You want access to proven industry experts you can rely on to make the right decisions</li>
-                <li>You want to concentrate on features, not architecture</li>
-                <li>
-                  You want to empower your developers with the best frontend development setup to make them flourish
-                </li>
-                <li>You want to concentrate on features, not architecture</li>
-                <li>Your team are more familiar with backend development.</li>
-                <li>You want to remove the guesswork</li>
-              </ul>
-            </Panel>
-            <Panel>
-              <H1>Next</H1>
-            </Panel>
-            <Panel>
-              <h2>Panel 4</h2>
-            </Panel>
-            <Panel>
-              <h2>Panel 5</h2>
-            </Panel>
-          </div>
-        </section>
-        <section id="map" className="full-screen">
-          Map
+        <div className="panels-container border-8 border-blue-500 h-full w-500p flex flex-nowrap p-0">
+          <Panel className="bg-breakglass">
+            <div ref={breakglass} className="flex breaking justify-center">
+              <img ref={imgLeft} alt="breaking glass left" className="bglass-left glass" src={breakglassLeft} />
+              <img alt="breaking glass right" className="bglass-right glass" src={breakglassRight} />
+            </div>
+          </Panel>
+          <Panel className="panel2 bg-white text-black items">
+            <H1>We can help if...</H1>
+            <ul className="flex flex-col items-center h-full justify-evenly">
+              <li>You need to get it right the first time</li>
+              <li>You want access to proven industry experts you can rely on to make the right decisions</li>
+              <li>You want to concentrate on features, not architecture</li>
+              <li>
+                You want to empower your developers with the best frontend development setup to make them flourish
+              </li>
+              <li>You want to concentrate on features, not architecture</li>
+              <li>Your team are more familiar with backend development.</li>
+              <li>You want to remove the guesswork</li>
+            </ul>
+          </Panel>
+          <Panel>
+            <H1>Panel 3</H1>
+          </Panel>
+          <Panel>
+            <H1>Panel 4</H1>
+          </Panel>
+          <Panel>
+            <H1>Panel 5</H1>
+          </Panel>
+        </div>
+        <section className="final flex justify-center items-center min-h-80vh w-full">
+          <H1>Final</H1>
         </section>
       </main>
       {/* <footer>footer</footer> */}

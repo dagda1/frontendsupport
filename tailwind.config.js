@@ -11,9 +11,14 @@ module.exports = {
       },
       width: {
         '50p': '50%',
+        '400p': '400%',
+        '500p': '500%',
       },
       backgroundColor: {
         breakglass: '#138F4A',
+      },
+      minHeight: {
+        '80vh': '80vh',
       },
     },
   },

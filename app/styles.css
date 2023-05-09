@@ -19,8 +19,6 @@ html, body {
 }
 html {
   /* scroll-behavior: auto; */
-  /* overflow-x: hidden; */
-  /* overflow-y: scroll; */
 }
 
 body {
@@ -28,22 +26,21 @@ body {
   /* scroll-behavior: auto; */
 }
 
-body {
-  overflow-x: hidden;
-}
-
-#panels #panels-container {
-}
-
 main {
+  border: 10px solid white;
+  /* overflow-x: hidden;
+  overflow-y: scroll; */
 }
 
-
-.full-screen {
-  display: block;
+.panel {
+  border: 10px solid yellow;
+  justify-content: center;
+  height: 100%;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+}
+
+.final {
+  border: 10px solid gold;
 }
 
 .breaking {
