@@ -9,8 +9,8 @@ interface PanelProps {
 
 export function Panel({ className, innerRef, ...props }: PanelProps) {
   return (
-    <article
-      className={cs('panel h-full w-full flex flex-1 justify-center items-center relative p-0', className)}
+    <section
+      className={cs('panel h-full w-full justify-center items-center relative p-10 text-center', className)}
       ref={innerRef}
       {...props}
     />

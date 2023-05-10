@@ -9,6 +9,10 @@ module.exports = {
       padding: {
         '5p': '5%',
       },
+      height: {
+        '80vh': '80vh',
+        '90vh': '90vh',
+      },
       width: {
         '50p': '50%',
         '400p': '400%',
@@ -19,6 +23,9 @@ module.exports = {
       },
       minHeight: {
         '80vh': '80vh',
+      },
+      flex: {
+        auto: '1 0 auto',
       },
     },
   },

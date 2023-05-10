@@ -64,64 +64,72 @@ export function Overlay() {
     //     },
     //     { y: 0, opacity: 1, ease: Bounce.easeOut, duration: 1 },
     //   );
-    // let ctx: ReturnType<typeof gsap.context>;
-    // setTimeout(() => {
-    //   if (document.querySelector('.pin-spacer')) {
-    //     return;
-    //   }
-    //   assert(!!breakglass.current);
-    //   assert(!!imgLeft.current);
-    //   const offset = imgLeft.current.getBoundingClientRect().width;
-    //   const enterConfig = { y: 0, opacity: 1, duration: 0.4 };
-    //   ctx = gsap.context(() => {
-    //     const tl = gsap;
-    //     // .timeline({
-    //     //   scrollTrigger: {
-    //     //     trigger: '.breaking',
-    //     //     start: 'top 20%',
-    //     //     end: 'bottom 80%',
-    //     //     scrub: true,
-    //     //     markers: true,
-    //     //     // onEnter: () => gsap.to('.breaking', enterConfig),
-    //     //     // onEnterBack: () => gsap.to('.breaking', enterConfig),
-    //     //     // onLeave: () => gsap.to('.breaking', { y: -100, opacity: 0, duration: 0.4 }),
-    //     //     // onLeaveBack: () => gsap.to('.breaking', { y: 100, opacity: 0, duration: 0.4 }),
-    //     //   },
-    //     // })
-    //     // .to(breakglass.current, { justifyContent: 'space-between' });
-    //     // ScrollTrigger.create({
-    //     //   start: (_) => tl.scrollTrigger!.end,
-    //     //   end: 'max',
-    //     //   pin: '.breaking',
-    //     //   pinSpacing: false,
-    //     //   pinReparent: true,
-    //     // });
-    //     const panelsContainer = document.querySelector<HTMLDivElement>('#panels-container');
-    //     assert(!!panelsContainer);
-    //     const panels = gsap.utils.toArray<HTMLDivElement>('#panels-container .panel');
-    //     gsap.to(panels, {
-    //       xPercent: -100 * (panels.length - 1),
-    //       ease: 'none',
-    //       scrollTrigger: {
-    //         trigger: '#panels-container',
-    //         pin: true,
-    //         start: 'top top',
-    //         scrub: 1,
-    //         snap: {
-    //           snapTo: 1 / (panels.length - 1),
-    //           inertia: false,
-    //           duration: { min: 0.1, max: 0.1 },
-    //         },
-    //         end: () => '+=' + (panelsContainer.offsetWidth - innerWidth),
-    //         markers: true,
-    //       },
-    //     });
-    //   });
-    // }, 50);
-    // return () => {
-    //   console.log(ctx);
-    //   return ctx && ctx.revert();
-    // };
+    let ctx: ReturnType<typeof gsap.context>;
+    setTimeout(() => {
+      if (document.querySelector('.pin-spacer')) {
+        return;
+      }
+
+      // assert(!!breakglass.current);
+      // assert(!!imgLeft.current);
+      ctx = gsap.context(() => {
+        // const tl = gsap;
+        // .timeline({
+        //   scrollTrigger: {
+        //     trigger: '.breaking',
+        //     start: 'top 20%',
+        //     end: 'bottom 80%',
+        //     scrub: true,
+        //     markers: true,
+        //     // onEnter: () => gsap.to('.breaking', enterConfig),
+        //     // onEnterBack: () => gsap.to('.breaking', enterConfig),
+        //     // onLeave: () => gsap.to('.breaking', { y: -100, opacity: 0, duration: 0.4 }),
+        //     // onLeaveBack: () => gsap.to('.breaking', { y: 100, opacity: 0, duration: 0.4 }),
+        //   },
+        // })
+        // .to(breakglass.current, { justifyContent: 'space-between' });
+        // ScrollTrigger.create({
+        //   start: (_) => tl.scrollTrigger!.end,
+        //   end: 'max',
+        //   pin: '.breaking',
+        //   pinSpacing: false,
+        //   pinReparent: true,
+        // });
+        const panelsContainer = document.querySelector<HTMLDivElement>('.panels-container');
+        assert(!!panelsContainer);
+        const panels = gsap.utils.toArray<HTMLDivElement>('.panel');
+
+        const scrollTween = gsap.to(panels, {
+          xPercent: -100 * (panels.length - 1),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.panels-container',
+            pin: true,
+            scrub: 0.1,
+            //snap: directionalSnap(1 / (sections.length - 1)),
+            end: '+=3000',
+            markers: true,
+          },
+        });
+
+        ScrollTrigger.create({
+          trigger: '.green',
+          containerAnimation: scrollTween,
+          start: 'center 65%',
+          end: 'center 51%',
+          onEnter: () => console.log('enter'),
+          onLeave: () => console.log('leave'),
+          onEnterBack: () => console.log('enterBack'),
+          onLeaveBack: () => console.log('leaveBack'),
+          onToggle: (self) => console.log('active', self.isActive),
+          id: '4',
+        });
+      });
+    }, 500);
+    return () => {
+      console.log(ctx);
+      return ctx && ctx.revert();
+    };
   }, []);
 
   return (
@@ -136,60 +144,56 @@ export function Overlay() {
           </span>
         </div>
       </header> */}
-      <main className="h-full overflow-x-hidden overflow-y-scroll" ref={mainRef}>
-        <FrontPage
-          innerRef={overlay}
-          className="border-8 border-solid sm:border-pink-500 border-green-500 md:border-yellow-500 lg:border-slate-500 xl:border-red-500 2xl:border-cyan-500"
+      {/* <main className="h-full m-0 p-0" ref={mainRef}> */}
+      <FrontPage
+        innerRef={overlay}
+        className="border-8 border-solid sm:border-pink-500 border-green-500 md:border-yellow-500 lg:border-slate-500 xl:border-red-500 2xl:border-cyan-500"
+      >
+        <h1
+          ref={heading}
+          className="text-6xl sm:text-8xl xl:text-7xl 2xl:text-7xl w-50p mt-20 lg:mt-12 xl:mt-10 text-center"
         >
-          <h1
-            ref={heading}
-            className="text-6xl sm:text-8xl xl:text-7xl 2xl:text-7xl w-50p mt-20 lg:mt-12 xl:mt-10 text-center"
-          >
-            STRUGGLING TO DELIVER FRONTEND FEATURES?
-          </h1>
-          <button
-            className="ctaButton border-2 border-white py-5 px-10 rounded-full rubik text-2xl sm:text-3xl mt-20 sm:mt-0 lg:mt-20"
-            ref={buttonRef}
-          >
-            FIND OUT HOW WE CAN HELP
-          </button>
-        </FrontPage>
-        <div className="panels-container border-8 border-blue-500 h-full w-500p flex flex-nowrap p-0">
-          <Panel className="bg-breakglass">
-            <div ref={breakglass} className="flex breaking justify-center">
-              <img ref={imgLeft} alt="breaking glass left" className="bglass-left glass" src={breakglassLeft} />
-              <img alt="breaking glass right" className="bglass-right glass" src={breakglassRight} />
-            </div>
-          </Panel>
-          <Panel className="panel2 bg-white text-black items">
-            <H1>We can help if...</H1>
-            <ul className="flex flex-col items-center h-full justify-evenly">
-              <li>You need to get it right the first time</li>
-              <li>You want access to proven industry experts you can rely on to make the right decisions</li>
-              <li>You want to concentrate on features, not architecture</li>
-              <li>
-                You want to empower your developers with the best frontend development setup to make them flourish
-              </li>
-              <li>You want to concentrate on features, not architecture</li>
-              <li>Your team are more familiar with backend development.</li>
-              <li>You want to remove the guesswork</li>
-            </ul>
-          </Panel>
-          <Panel>
-            <H1>Panel 3</H1>
-          </Panel>
-          <Panel>
-            <H1>Panel 4</H1>
-          </Panel>
-          <Panel>
-            <H1>Panel 5</H1>
-          </Panel>
-        </div>
-        <section className="final flex justify-center items-center min-h-80vh w-full">
-          <H1>Final</H1>
-        </section>
-      </main>
-      {/* <footer>footer</footer> */}
+          STRUGGLING TO DELIVER FRONTEND FEATURES?
+        </h1>
+        <button
+          className="ctaButton border-2 border-white py-5 px-10 rounded-full rubik text-2xl sm:text-3xl mt-20 sm:mt-0 lg:mt-20"
+          ref={buttonRef}
+        >
+          FIND OUT HOW WE CAN HELP
+        </button>
+      </FrontPage>
+
+      <div className="panels-container w-500p h-full flex flex-nowrap">
+        <Panel className="bg-breakglass">
+          <div ref={breakglass} className="flex breaking items-center justify-center">
+            <img ref={imgLeft} alt="breaking glass left" className="bglass-left glass" src={breakglassLeft} />
+            <img alt="breaking glass right" className="bglass-right glass" src={breakglassRight} />
+          </div>
+        </Panel>
+
+        <Panel className="white">
+          <H1 className="text-black">We can help if...</H1>
+        </Panel>
+
+        <Panel className="gray">
+          <ul className="flex flex-col items-center h-full justify-evenly">
+            <li>You need to get it right the first time</li>
+            <li>You want access to proven industry experts you can rely on to make the right decisions</li>
+            <li>You want to concentrate on features, not architecture</li>
+            <li>You want to empower your developers with the best frontend development setup to make them flourish</li>
+            <li>You want to concentrate on features, not architecture</li>
+            <li>Your team are more familiar with backend development.</li>
+            <li>You want to remove the guesswork</li>
+          </ul>
+        </Panel>
+        <Panel className="green">
+          <h1>Panel 4</h1>
+        </Panel>
+      </div>
+
+      <div className="final">
+        <h1>FINAL</h1>
+      </div>
     </>
   );
 }
