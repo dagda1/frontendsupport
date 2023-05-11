@@ -1,4 +1,5 @@
-import { style } from '@vanilla-extract/css';
+import { vars } from '@cutting/component-library';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 export const panels = style({
   width: '500%',
@@ -7,21 +8,23 @@ export const panels = style({
   flexWrap: 'nowrap',
 });
 
-export const breakingContainer = style({
-  backgroundColor: '#138F4A',
-  overflowX: 'hidden',
-});
-
 export const breaking = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  width: '100%',
+  paddingRight: vars.space['10x'],
+  paddingLeft: vars.space['10x'],
+  position: 'relative',
+  minHeight: '100vh',
 });
 
-export const final = style({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  padding: '10px',
-  minHeight: '100vh',
+globalStyle(`${breaking} img`, {
+  zIndex: 3,
+});
+
+export const services = style({
+  position: 'absolute',
+  left: '50%',
+  transform: 'translateX(-50%)',
 });

@@ -1,9 +1,20 @@
 import { NavLink } from '@remix-run/react';
+import type { ReactNode } from 'react';
+import cs from 'classnames';
+import * as styles from './CTAButton.css';
+import type { Ref } from 'react';
 
-export function CTAButton(): JSX.Element {
+interface CTAButtonProps {
+  children: ReactNode;
+  className?: string;
+  link: string;
+  innerRef?: Ref<HTMLAnchorElement>;
+}
+
+export function CTAButton({ children, link, className, innerRef }: CTAButtonProps): JSX.Element {
   return (
-    <NavLink to="/contact" className="ctaButton border-2 border-white py-5 px-10 rounded-full rubik text-2xl">
-      GET IN TOUCH
+    <NavLink ref={innerRef} to={link} className={cs(styles.ctaButton, className)}>
+      {children}
     </NavLink>
   );
 }

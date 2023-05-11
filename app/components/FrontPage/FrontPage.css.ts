@@ -23,24 +23,23 @@ export const heading = style({
   padding: vars.space['2x'],
   ...responsiveStyle({
     mobile: {
-      marginBottom: vars.space['5x'],
+      marginBottom: vars.space['2x'],
       fontSize: '6rem',
       lineHeight: '6rem',
     },
     tablet: {
-      border: '10px solid blue',
+      // border: '10px solid blue',
       fontSize: '8rem',
       lineHeight: '8rem',
     },
     desktop: {
       width: '50%',
-      border: '10px solid red',
-      // fontSize: '10rem',
-      // lineHeight: '10rem',
+      // border: '10px solid red',
       marginBottom: 0,
     },
     wide: {
-      border: '10px solid cyan',
+      width: '40%',
+      // border: '10px solid cyan',
     },
   }),
 });
@@ -51,24 +50,31 @@ export const ctaButton = style([
     background: 'transparent',
     color: palette.white,
     borderRadius: '9999px',
+    fontWeight: 'bold',
     ...responsiveStyle({
       mobile: {
-        fontSize: '2rem',
+        fontSize: '1.25rem',
         lineHeight: '2.25rem',
       },
       tablet: {
-        width: '50%',
-        fontSize: '3rem',
+        fontSize: '2.5rem',
         lineHeight: '3rem',
       },
-      desktop: {
-        width: '30%',
-      },
+      desktop: {},
       wide: {},
     }),
   },
   atoms({
     paddingY: '2x',
-    paddingX: '3x',
+    paddingX: {
+      mobile: '4x',
+      desktop: '3x',
+      wide: '5x',
+    },
   }),
 ]);
+
+export const scroller = style({
+  position: 'relative',
+  top: vars.space['3x'],
+});
