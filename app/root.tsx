@@ -10,7 +10,7 @@ import normalMap from '~/images/NormalMap2.png';
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'Frontend Support',
-  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
+  viewport: 'width=device-width,initial-scale=1',
 });
 
 export const links: LinksFunction = () => [

@@ -144,56 +144,32 @@ export function Overlay() {
           </span>
         </div>
       </header> */}
-      {/* <main className="h-full m-0 p-0" ref={mainRef}> */}
-      <FrontPage
-        innerRef={overlay}
-        className="border-8 border-solid sm:border-pink-500 border-green-500 md:border-yellow-500 lg:border-slate-500 xl:border-red-500 2xl:border-cyan-500"
-      >
-        <h1
-          ref={heading}
-          className="text-6xl sm:text-8xl xl:text-7xl 2xl:text-7xl w-50p mt-20 lg:mt-12 xl:mt-10 text-center"
-        >
-          STRUGGLING TO DELIVER FRONTEND FEATURES?
-        </h1>
-        <button
-          className="ctaButton border-2 border-white py-5 px-10 rounded-full rubik text-2xl sm:text-3xl mt-20 sm:mt-0 lg:mt-20"
-          ref={buttonRef}
-        >
-          FIND OUT HOW WE CAN HELP
-        </button>
-      </FrontPage>
+      <main ref={mainRef}>
+        <FrontPage innerRef={overlay}>
+          <h1>Front</h1>
+        </FrontPage>
 
-      <div className="panels-container w-500p h-full flex flex-nowrap">
-        <Panel className="bg-breakglass">
-          <div ref={breakglass} className="flex breaking items-center justify-center">
-            <img ref={imgLeft} alt="breaking glass left" className="bglass-left glass" src={breakglassLeft} />
-            <img alt="breaking glass right" className="bglass-right glass" src={breakglassRight} />
-          </div>
-        </Panel>
+        <div className="panels-container">
+          <Panel className="bg-breakglass">
+            <h1>Panel 1</h1>
+          </Panel>
 
-        <Panel className="white">
-          <H1 className="text-black">We can help if...</H1>
-        </Panel>
+          <Panel className="white">
+            <h1>Panel 2</h1>
+          </Panel>
 
-        <Panel className="gray">
-          <ul className="flex flex-col items-center h-full justify-evenly">
-            <li>You need to get it right the first time</li>
-            <li>You want access to proven industry experts you can rely on to make the right decisions</li>
-            <li>You want to concentrate on features, not architecture</li>
-            <li>You want to empower your developers with the best frontend development setup to make them flourish</li>
-            <li>You want to concentrate on features, not architecture</li>
-            <li>Your team are more familiar with backend development.</li>
-            <li>You want to remove the guesswork</li>
-          </ul>
-        </Panel>
-        <Panel className="green">
-          <h1>Panel 4</h1>
-        </Panel>
-      </div>
+          <Panel className="gray">
+            <h1>Panel 3</h1>
+          </Panel>
+          <Panel className="green">
+            <h1>Panel 4</h1>
+          </Panel>
+        </div>
 
-      <div className="final">
-        <h1>FINAL</h1>
-      </div>
+        <div className="final">
+          <h1>FINAL</h1>
+        </div>
+      </main>
     </>
   );
 }

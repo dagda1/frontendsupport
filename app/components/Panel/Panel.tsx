@@ -8,11 +8,5 @@ interface PanelProps {
 }
 
 export function Panel({ className, innerRef, ...props }: PanelProps) {
-  return (
-    <section
-      className={cs('panel h-full w-full justify-center items-center relative p-10 text-center', className)}
-      ref={innerRef}
-      {...props}
-    />
-  );
+  return <section className={cs('panel h-full', className)} ref={innerRef} {...props} />;
 }
