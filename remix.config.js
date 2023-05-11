@@ -2,9 +2,10 @@
 module.exports = {
   future: {
     v2_routeConvention: true,
-    unstable_tailwind: true,
+    unstable_vanillaExtract: true,
+    unstable_dev: true,
   },
-  ignoredRouteFiles: ['**/.*'],
+  ignoredRouteFiles: ['**/.*', '**/*.css.ts'],
   publicPath: '/_static/build/',
   server: './server.js',
   serverBuildPath: 'server/index.js',

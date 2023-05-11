@@ -9,7 +9,8 @@ import { assert } from 'assert-ts';
 import { useIsomorphicLayoutEffect } from '@cutting/hooks';
 import { Panel } from '../components/Panel/Panel';
 import { FrontPage } from '~/components/FrontPage/FrontPage';
-import { H1 } from '~/components/Headings/headings';
+import cs from 'classnames';
+import * as styles from './Overlay.css';
 
 export function Overlay() {
   const rafID = useRef<number>();
@@ -108,7 +109,7 @@ export function Overlay() {
             scrub: 0.1,
             //snap: directionalSnap(1 / (sections.length - 1)),
             end: '+=3000',
-            markers: true,
+            // markers: true,
           },
         });
 
@@ -145,13 +146,14 @@ export function Overlay() {
         </div>
       </header> */}
       <main ref={mainRef}>
-        <FrontPage innerRef={overlay}>
-          <h1>Front</h1>
-        </FrontPage>
+        <FrontPage innerRef={overlay} headingRef={heading} buttonRef={buttonRef} />
 
-        <div className="panels-container">
-          <Panel className="bg-breakglass">
-            <h1>Panel 1</h1>
+        <div className={cs('panels-container', styles.panels)}>
+          <Panel className={styles.breakingContainer}>
+            <div ref={breakglass} className={cs('breaking', styles.breaking)}>
+              <img ref={imgLeft} alt="breaking glass left" className="bglass-left glass" src={breakglassLeft} />
+              <img alt="breaking glass right" className="bglass-right glass" src={breakglassRight} />
+            </div>
           </Panel>
 
           <Panel className="white">
@@ -166,7 +168,7 @@ export function Overlay() {
           </Panel>
         </div>
 
-        <div className="final">
+        <div className={styles.final}>
           <h1>FINAL</h1>
         </div>
       </main>

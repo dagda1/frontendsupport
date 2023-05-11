@@ -2,19 +2,23 @@ import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import rehypeStyles from './rehype.css';
 import katex from 'katex/dist/katex.min.css';
-import tailwindCss from '~/tailwind.css';
-import styles from '~/styles.css';
 import displacement from '~/images/displacement.jpg';
 import normalMap from '~/images/NormalMap2.png';
+import { cssBundleHref } from '@remix-run/css-bundle';
+import * as styles from './global.css';
+import { supportTheme } from '@cutting/component-library';
+import cs from 'classnames';
+import cuttingStyles from '@cutting/component-library/styles.css';
+import cssStyles from '~/styles.css';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'Frontend Support',
   viewport: 'width=device-width,initial-scale=1',
+  'content-type': 'text/html; charset=UTF-8',
 });
 
 export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: tailwindCss },
   {
     rel: 'stylesheet',
     href: rehypeStyles,
@@ -22,10 +26,6 @@ export const links: LinksFunction = () => [
   {
     rel: 'stylesheet',
     href: katex,
-  },
-  {
-    rel: 'stylesheet',
-    href: styles,
   },
   {
     rel: 'preload',
@@ -37,6 +37,18 @@ export const links: LinksFunction = () => [
     href: normalMap,
     as: 'image',
   },
+  {
+    rel: 'stylesheet',
+    href: cuttingStyles as unknown as string,
+  },
+  {
+    rel: 'stylesheet',
+    href: cssBundleHref as string,
+  },
+  {
+    rel: 'stylesheet',
+    href: cssStyles,
+  },
 ];
 
 export default function App() {
@@ -46,7 +58,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-black text-white">
+      <body className={cs(supportTheme, styles.body)}>
         <Outlet />
         {/* <ScrollRestoration /> */}
         <Scripts />
