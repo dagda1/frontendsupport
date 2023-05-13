@@ -43,11 +43,11 @@ body {
   background-color: #138F4A;
   background-image: radial-gradient(circle at 46% 40%, rgba(228, 228, 228, 0.06) 0%, rgba(228, 228, 228, 0.06) 13%, transparent 13%, transparent 100%), radial-gradient(circle at 11% 41%, rgba(198, 198, 198, 0.06) 0%, rgba(198, 198, 198, 0.06) 19%, transparent 19%, transparent 100%), radial-gradient(circle at 52% 23%, rgba(14, 14, 14, 0.06) 0%, rgba(14, 14, 14, 0.06) 69%, transparent 69%, transparent 100%), radial-gradient(circle at 13% 85%, rgba(148, 148, 148, 0.06) 0%, rgba(148, 148, 148, 0.06) 44%, transparent 44%, transparent 100%), radial-gradient(circle at 57% 74%, rgba(232, 232, 232, 0.06) 0%, rgba(232, 232, 232, 0.06) 21%, transparent 21%, transparent 100%), radial-gradient(circle at 59% 54%, rgba(39, 39, 39, 0.06) 0%, rgba(39, 39, 39, 0.06) 49%, transparent 49%, transparent 100%), radial-gradient(circle at 98% 38%, rgba(157, 157, 157, 0.06) 0%, rgba(157, 157, 157, 0.06) 24%, transparent 24%, transparent 100%), radial-gradient(circle at 8% 6%, rgba(60, 60, 60, 0.06) 0%, rgba(60, 60, 60, 0.06) 12%, transparent 12%, transparent 100%), linear-gradient(90deg, #138F4A, #138F4A);
 }
-
+/* 
 .green {
   background-color: #28a92b;
   background-image: radial-gradient(circle at 46% 40%, rgba(228, 228, 228, 0.06) 0%, rgba(228, 228, 228, 0.06) 13%, transparent 13%, transparent 100%), radial-gradient(circle at 11% 41%, rgba(198, 198, 198, 0.06) 0%, rgba(198, 198, 198, 0.06) 19%, transparent 19%, transparent 100%), radial-gradient(circle at 52% 23%, rgba(14, 14, 14, 0.06) 0%, rgba(14, 14, 14, 0.06) 69%, transparent 69%, transparent 100%), radial-gradient(circle at 13% 85%, rgba(148, 148, 148, 0.06) 0%, rgba(148, 148, 148, 0.06) 44%, transparent 44%, transparent 100%), radial-gradient(circle at 57% 74%, rgba(232, 232, 232, 0.06) 0%, rgba(232, 232, 232, 0.06) 21%, transparent 21%, transparent 100%), radial-gradient(circle at 59% 54%, rgba(39, 39, 39, 0.06) 0%, rgba(39, 39, 39, 0.06) 49%, transparent 49%, transparent 100%), radial-gradient(circle at 98% 38%, rgba(157, 157, 157, 0.06) 0%, rgba(157, 157, 157, 0.06) 24%, transparent 24%, transparent 100%), radial-gradient(circle at 8% 6%, rgba(60, 60, 60, 0.06) 0%, rgba(60, 60, 60, 0.06) 12%, transparent 12%, transparent 100%), linear-gradient(90deg, #28a92b, #10a614);
-}
+} */
 
 .panels-container {
   -ms-scroll-chaining: none;
@@ -83,11 +83,11 @@ body {
 }
 
 .double-images.type-01 figure:last-child {
-  max-width: 45rem;
-  height: 50vh;
+  max-width: 51rem;
+  height: 62vh;
   position: absolute;
-  bottom: -4rem;
-  right: -26rem;
+  bottom: -5rem;
+  right: 40rem;
   top: auto;
 }
 
@@ -112,11 +112,11 @@ figure img {
   right: 0;
 }
 
-.caption ul {
-  font-size: clamp(6rem, 5vw, 4rem);
+.caption h2 {
+  font-size: clamp(3rem, 2vw, 3rem);
   text-transform: uppercase;
   line-height: 1;
-  width: 35%;
+  width: 50%;
 }
 
 .start-content {
@@ -163,21 +163,27 @@ figure img {
 }
 
 .triple-images:not(.two) figure:nth-child(3) {
-  width: 40vh;
-  height: 26rem;
+  width: 20vh;
+  height: 13rem;
   position: absolute;
-  bottom: -30%;
+  bottom: -10%;
   left: -20%;
 }
 
 .caption2 {
   padding-left: 10rem;
+  padding-right: 10rem;
 }
 
+.caption2 h2 {
+  font-size: clamp(5rem, 6vw, 4rem);
+  text-transform: uppercase;
+  line-height: 1;
+}
 
 .triple-images.two figure:first-child {
-  width: 50vh;
-  height: 50vh;
+  width: 80vh;
+  height: 40vh;
   padding-bottom: 100%;
   top: -12rem;
 }
@@ -187,7 +193,7 @@ figure img {
   height: 50vh;
   position: absolute;
   top: 10%;
-  left: -84%;
+  left: -50%;
   z-index: 3;
 }
 
@@ -195,6 +201,30 @@ figure img {
   width: 67vh;
   height: 26rem;
   position: absolute;
-  bottom: -30%;
+  bottom: -10%;
+  left: -20%;
+}
+
+.triple-images.three figure:first-child {
+  width: 50vh;
+  height: 50vh;
+  padding-bottom: 100%;
+  top: -20rem;
+}
+
+.triple-images.three figure:nth-child(2) {
+  width: 55vh;
+  height: 50vh;
+  position: absolute;
+  top: 10%;
+  left: -50%;
+  z-index: 3;
+}
+
+.triple-images.three figure:nth-child(3) {
+  width: 67vh;
+  height: 26rem;
+  position: absolute;
+  bottom: -40%;
   left: -20%;
 }

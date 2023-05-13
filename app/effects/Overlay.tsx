@@ -19,6 +19,10 @@ import react from '~/images/react.svg';
 import lloyds from '~/images/lloyds_bank_logo.jpeg';
 import waitrose from '~/images/waitrose.svg';
 import volvo from '~/images/volvo.png';
+import backstage from '~/images/backstage-logos-hero-8.gif';
+import ember from '~/images/emberjs.png';
+import bigtest from '~/images/bigtest.png';
+import { ExternalLink } from '@cutting/component-library';
 
 export function Overlay() {
   const overlay = useRef<HTMLDivElement>(null);
@@ -212,7 +216,9 @@ export function Overlay() {
                 </figure>
               </div>
               <div className="caption2">
-                <h2>Having worked with</h2>
+                <h2>
+                  With <ExternalLink href="https://cutting.scot/oss">350+ merged pull requests</ExternalLink> into...
+                </h2>
               </div>
             </div>
           </Panel>
@@ -220,19 +226,32 @@ export function Overlay() {
             <div className="chapters">
               <div className="triple-images two">
                 <figure>
-                  <img alt="Lloyds Bank" src={lloyds} />
+                  <img alt="ember" src={ember} />
                 </figure>
                 <figure className="parallax">
-                  <img alt="Waitrosse" src={waitrose} />
+                  <img alt="Backstage" src={backstage} />
                 </figure>
                 <figure className="parallax">
-                  <img alt="volvo ocean race" src={volvo} />
+                  <img alt="Bigtest" src={bigtest} />
                 </figure>
+              </div>
+              <div className="caption2">
+                <h2>Having worked with...</h2>
               </div>
             </div>
           </Panel>
           <Panel className="green">
-            <h1>Panel 5</h1>
+            <div className="triple-images three">
+              <figure>
+                <img alt="Lloyds Bank" src={lloyds} />
+              </figure>
+              <figure className="parallax">
+                <img alt="Waitrosse" src={waitrose} />
+              </figure>
+              <figure className="parallax">
+                <img alt="volvo ocean race" src={volvo} />
+              </figure>
+            </div>
           </Panel>
         </div>
 
