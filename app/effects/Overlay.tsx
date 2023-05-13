@@ -13,6 +13,12 @@ import { Header } from '~/components/Header/Header';
 import { useParentSize } from '@cutting/use-get-parent-size';
 import painText from '~/images/paintext_wide.png';
 import pain from '~/images/pain_wide.png';
+import typescript from '~/images/typescript.svg';
+import graphql from '~/images/graphql3.svg';
+import react from '~/images/react.svg';
+import lloyds from '~/images/lloyds_bank_logo.jpeg';
+import waitrose from '~/images/waitrose.svg';
+import volvo from '~/images/volvo.png';
 
 export function Overlay() {
   const overlay = useRef<HTMLDivElement>(null);
@@ -83,16 +89,15 @@ export function Overlay() {
       const ctx = gsap.context(() => {
         assert(!!panelsContainer.current);
 
-        const panels = gsap.utils.toArray<HTMLDivElement>('.panel');
-
-        const scrollTween = gsap.to(panels, {
-          xPercent: -100 * (panels.length - 1),
+        let scrollTween = gsap.to(panelsContainer.current, {
+          x: () => -(panelsContainer.current!.scrollWidth - window.innerWidth),
           ease: 'none',
           scrollTrigger: {
-            trigger: '.panels-container',
+            trigger: panelsContainer.current,
+            invalidateOnRefresh: true,
             pin: true,
-            scrub: 0.1,
-            end: '+=3000',
+            scrub: 1,
+            end: () => '+=' + panelsContainer.current!.scrollWidth,
           },
         });
 
@@ -168,11 +173,13 @@ export function Overlay() {
       <main>
         <FrontPage innerRef={overlay} headingRef={heading} buttonRef={buttonRef} />
 
-        <div ref={panelsContainer} className={cs('panels-container', styles.panels)}>
-          <Panel>
-            <h1>We can help if...</h1>
+        <div ref={panelsContainer} className={cs('panels-container')}>
+          <Panel className="start-content">
+            <div className="item">
+              <h1>We can help if...</h1>
+            </div>
           </Panel>
-          <Panel innerRef={mainRef} className="blue">
+          <Panel innerRef={mainRef}>
             {/* <h1>We can help if.....</h1> */}
             <div className="chapters">
               <div className="double-images type-01">
@@ -183,25 +190,49 @@ export function Overlay() {
                   <img alt="software pain" src={painText} />
                 </figure>
               </div>
-              <div className="caption fadeUp">
-                <h2 className="slideText">You have to get it right first time</h2>
-                <p>
-                  I have over 20 years of experience working on some exceptional frontend pieces of work for companies
-                  such as Apple, HP, waitrose, the Volvo ocean race, the Scottish and Northern Irish governments and
-                  many others.
-                </p>
+              <div className="caption">
+                <h2>You have to get it right first time</h2>
+                <h2>You need access to industry experts</h2>
+                <h2>Your team are more familiar with backend development.</h2>
               </div>
             </div>
           </Panel>
 
-          <Panel className="gray">
-            <h1>Panel 3</h1>
+          <Panel>
+            <div className="chapters">
+              <div className="triple-images">
+                <figure>
+                  <img alt="typescript" src={typescript} />
+                </figure>
+                <figure className="parallax">
+                  <img alt="graphql" src={graphql} />
+                </figure>
+                <figure className="parallax">
+                  <img alt="react" src={react} />
+                </figure>
+              </div>
+              <div className="caption2">
+                <h2>Having worked with</h2>
+              </div>
+            </div>
           </Panel>
-          <Panel className="white">
-            <h1>Panel 4</h1>
+          <Panel>
+            <div className="chapters">
+              <div className="triple-images two">
+                <figure>
+                  <img alt="Lloyds Bank" src={lloyds} />
+                </figure>
+                <figure className="parallax">
+                  <img alt="Waitrosse" src={waitrose} />
+                </figure>
+                <figure className="parallax">
+                  <img alt="volvo ocean race" src={volvo} />
+                </figure>
+              </div>
+            </div>
           </Panel>
           <Panel className="green">
-            <h1>Panel 4</h1>
+            <h1>Panel 5</h1>
           </Panel>
         </div>
 
