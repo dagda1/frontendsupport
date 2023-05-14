@@ -106,7 +106,7 @@ export function Overlay() {
         });
 
         ScrollTrigger.create({
-          trigger: '.green',
+          trigger: styles.final,
           containerAnimation: scrollTween,
           start: 'center 65%',
           end: 'center 51%',
@@ -180,7 +180,7 @@ export function Overlay() {
         <div ref={panelsContainer} className={cs('panels-container')}>
           <Panel className="start-content">
             <div className="item">
-              <h1>We can help if...</h1>
+              <h2>We an help if.....</h2>
             </div>
           </Panel>
           <Panel innerRef={mainRef}>
@@ -194,6 +194,7 @@ export function Overlay() {
                   <img alt="software pain" src={painText} />
                 </figure>
               </div>
+
               <div className="caption">
                 <h2>You have to get it right first time</h2>
                 <h2>You need access to industry experts</h2>
@@ -251,6 +252,11 @@ export function Overlay() {
               <figure className="parallax">
                 <img alt="volvo ocean race" src={volvo} />
               </figure>
+            </div>
+          </Panel>
+          <Panel className={styles.final}>
+            <div className="caption2">
+              <h2>We live and breathe frontend development</h2>
             </div>
           </Panel>
         </div>

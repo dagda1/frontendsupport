@@ -28,3 +28,12 @@ export const services = style({
   left: '50%',
   transform: 'translateX(-50%)',
 });
+
+export const startContent = style({
+  flex: '0 0 100vw',
+});
+
+export const final = style({
+  display: 'flex',
+  alignItems: 'center',
+});
