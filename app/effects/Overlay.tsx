@@ -39,11 +39,16 @@ export function Overlay() {
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     window.scrollTo(0, 0);
-  }, []);
+  }, [right]);
 
   useIsomorphicLayoutEffect(() => {
     function main() {
+      if (right === 1 || document.querySelector('.pin-spacer')) {
+        return;
+      }
+
       // const timeline = gsap.timeline();
+
       // timeline
       //   .fromTo(
       //     heading.current,
@@ -82,11 +87,6 @@ export function Overlay() {
       //   )
       //   .to('.scroller', { autoAlpha: 1, duration: 3 });
 
-      console.log(width);
-      if (right === 1 || document.querySelector('.pin-spacer')) {
-        return;
-      }
-
       assert(!!breakglass.current);
       assert(!!imgLeft.current);
 
@@ -110,11 +110,6 @@ export function Overlay() {
           containerAnimation: scrollTween,
           start: 'center 65%',
           end: 'center 51%',
-          // onEnter: () => console.log('enter'),
-          // onLeave: () => console.log('leave'),
-          // onEnterBack: () => console.log('enterBack'),
-          // onLeaveBack: () => console.log('leaveBack'),
-          // onToggle: (self) => console.log('active', self.isActive),
           id: '4',
         });
 
@@ -177,16 +172,18 @@ export function Overlay() {
       <main>
         <FrontPage innerRef={overlay} headingRef={heading} buttonRef={buttonRef} />
 
-        <div ref={panelsContainer} className={cs('panels-container')}>
-          <Panel className="start-content">
-            <div className="item">
-              <h2>We an help if.....</h2>
+        <div ref={panelsContainer} className={cs('panels-container', styles.panels)}>
+          <Panel className={styles.startContent}>
+            <div className={styles.item}>
+              <div className={styles.caption2}>
+                <h2>We can help if.....</h2>
+              </div>
             </div>
           </Panel>
           <Panel innerRef={mainRef}>
             {/* <h1>We can help if.....</h1> */}
-            <div className="chapters">
-              <div className="double-images type-01">
+            <div className={styles.imageHolder}>
+              <div className={styles.doubleImages}>
                 <figure>
                   <img alt="software pain" src={pain} />
                 </figure>
@@ -195,7 +192,7 @@ export function Overlay() {
                 </figure>
               </div>
 
-              <div className="caption">
+              <div className={styles.caption}>
                 <h2>You have to get it right first time</h2>
                 <h2>You need access to industry experts</h2>
                 <h2>Your team are more familiar with backend development.</h2>
@@ -204,8 +201,8 @@ export function Overlay() {
           </Panel>
 
           <Panel>
-            <div className="chapters">
-              <div className="triple-images">
+            <div className={styles.imageHolder}>
+              <div className={cs(styles.tripleImages, 'frameworks')}>
                 <figure>
                   <img alt="typescript" src={typescript} />
                 </figure>
@@ -216,7 +213,7 @@ export function Overlay() {
                   <img alt="react" src={react} />
                 </figure>
               </div>
-              <div className="caption2">
+              <div className={styles.caption2}>
                 <h2>
                   With <ExternalLink href="https://cutting.scot/oss">350+ merged pull requests</ExternalLink> into...
                 </h2>
@@ -224,8 +221,8 @@ export function Overlay() {
             </div>
           </Panel>
           <Panel>
-            <div className="chapters">
-              <div className="triple-images two">
+            <div className={styles.imageHolder}>
+              <div className={cs(styles.tripleImages, 'oss')}>
                 <figure>
                   <img alt="ember" src={ember} />
                 </figure>
@@ -236,13 +233,13 @@ export function Overlay() {
                   <img alt="Bigtest" src={bigtest} />
                 </figure>
               </div>
-              <div className="caption2">
+              <div className={styles.caption2}>
                 <h2>Having worked with...</h2>
               </div>
             </div>
           </Panel>
           <Panel className="green">
-            <div className="triple-images three">
+            <div className={cs(styles.tripleImages, 'clients')}>
               <figure>
                 <img alt="Lloyds Bank" src={lloyds} />
               </figure>
@@ -255,7 +252,7 @@ export function Overlay() {
             </div>
           </Panel>
           <Panel className={styles.final}>
-            <div className="caption2">
+            <div className={styles.caption2}>
               <h2>We live and breathe frontend development</h2>
             </div>
           </Panel>

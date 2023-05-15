@@ -1,6 +1,5 @@
 import { globalStyle, style, keyframes } from '@vanilla-extract/css';
 import { palette } from '@cutting/component-library';
-import { isProduction } from '@cutting/util';
 import cue from '~/images/cue.svg';
 
 const pulse = keyframes({
@@ -23,7 +22,7 @@ export const scroller = style({
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
-  opacity: 0,
+  opacity: 1,
 });
 
 globalStyle(`${scroller} p`, {
