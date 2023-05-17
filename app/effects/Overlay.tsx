@@ -25,7 +25,6 @@ import bigtest from '~/images/bigtest.png';
 import { ExternalLink } from '@cutting/component-library';
 
 export function Overlay() {
-  const overlay = useRef<HTMLDivElement>(null);
   const breakglass = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const heading = useRef<HTMLHeadingElement>(null);
@@ -170,7 +169,7 @@ export function Overlay() {
     <>
       <Header ctaRef={cta} />
       <main>
-        <FrontPage innerRef={overlay} headingRef={heading} buttonRef={buttonRef} />
+        <FrontPage headingRef={heading} buttonRef={buttonRef} />
 
         <div ref={panelsContainer} className={cs('panels-container', styles.panels)}>
           <Panel className={styles.startContent}>

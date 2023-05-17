@@ -1,4 +1,4 @@
-import { atoms, responsiveStyle, vars } from '@cutting/component-library';
+import { atoms, vars } from '@cutting/component-library';
 import { style } from '@vanilla-extract/css';
 
 export const container = style([
@@ -11,15 +11,8 @@ export const container = style([
     width: '100%',
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'space-around',
     height: vars.space['12x'],
-    ...responsiveStyle({
-      mobile: {
-        justifyContent: 'space-around',
-      },
-      tablet: {
-        justifyContent: 'space-around',
-      },
-    }),
   },
   atoms({
     paddingX: {
