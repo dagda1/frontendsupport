@@ -1,30 +1,27 @@
 import cs from 'classnames';
 import { Panel } from '~/components/Panel/Panel';
-import { ExternalLink } from '@cutting/component-library';
-import typescript from '~/images/typescript.svg';
-import graphql from '~/images/graphql3.svg';
-import react from '~/images/react.svg';
 import * as panelStyles from '../Panels.css';
+import backstage from '~/images/backstage-logos-hero-8.gif';
+import ember from '~/images/emberjs.png';
+import bigtest from '~/images/bigtest.png';
 
 export function OSS(): JSX.Element {
   return (
     <Panel>
       <div className={panelStyles.imageHolder}>
-        <div className={cs(panelStyles.tripleImages, 'frameworks')}>
+        <div className={cs(panelStyles.tripleImages, 'oss')}>
           <figure>
-            <img alt="typescript" src={typescript} />
+            <img alt="ember" src={ember} />
           </figure>
           <figure className="parallax">
-            <img alt="graphql" src={graphql} />
+            <img alt="Backstage" src={backstage} />
           </figure>
           <figure className="parallax">
-            <img alt="react" src={react} />
+            <img alt="Bigtest" src={bigtest} />
           </figure>
         </div>
         <div className={panelStyles.caption2}>
-          <h2>
-            With <ExternalLink href="https://cutting.scot/oss">350+ merged pull requests</ExternalLink> into...
-          </h2>
+          <h2>Having worked with...</h2>
         </div>
       </div>
     </Panel>
