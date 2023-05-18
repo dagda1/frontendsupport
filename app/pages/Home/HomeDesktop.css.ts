@@ -15,3 +15,14 @@ export const panels = style({
     },
   }),
 });
+
+export const breaking = style({
+  ...responsiveStyle({
+    mobile: {
+      display: 'none !IMPORTANT',
+    },
+    desktop: {
+      display: 'flex !IMPORTANT',
+    },
+  }),
+});

@@ -4,6 +4,7 @@ import painText from '~/images/paintext_wide.png';
 import pain from '~/images/pain_wide.png';
 import * as styles from './HelpPanel.css';
 import * as panelStyles from '../Panels.css';
+import cs from 'classnames';
 
 interface HelpPanelProps {
   innerRef: Ref<HTMLDivElement>;
@@ -11,8 +12,7 @@ interface HelpPanelProps {
 
 export function HelpPanel({ innerRef }: HelpPanelProps): JSX.Element {
   return (
-    <Panel innerRef={innerRef}>
-      {/* <h1>We can help if.....</h1> */}
+    <Panel className={styles.main} innerRef={innerRef}>
       <div className={panelStyles.imageHolder}>
         <div className={styles.doubleImages}>
           <figure>
@@ -23,7 +23,7 @@ export function HelpPanel({ innerRef }: HelpPanelProps): JSX.Element {
           </figure>
         </div>
 
-        <div className={panelStyles.caption}>
+        <div className={cs(styles.headings, panelStyles.caption)}>
           <h2>You have to get it right first time</h2>
           <h2>You need access to industry experts</h2>
           <h2>Your team are more familiar with backend development.</h2>

@@ -28,18 +28,15 @@ export const heading = style({
       lineHeight: '6rem',
     },
     tablet: {
-      // border: '10px solid blue',
       fontSize: '8rem',
       lineHeight: '8rem',
     },
     desktop: {
       width: '50%',
-      // border: '10px solid red',
       marginBottom: 0,
     },
     wide: {
       width: '40%',
-      // border: '10px solid cyan',
     },
   }),
 });

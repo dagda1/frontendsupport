@@ -1,7 +1,7 @@
 import cs from 'classnames';
 import { Panel } from '~/components/Panel/Panel';
 import * as panelStyles from '../Panels.css';
-import backstage from '~/images/backstage-logos-hero-8.gif';
+import backstage from '~/images/backstage.png';
 import ember from '~/images/emberjs.png';
 import bigtest from '~/images/bigtest.png';
 

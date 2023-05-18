@@ -8,15 +8,14 @@ export function Home(): JSX.Element {
   const ctaRef = useRef<HTMLSpanElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const panelsContainer = useRef<HTMLDivElement>(null);
 
   return (
     <>
       <Header ctaRef={ctaRef} />
       <main>
         <FrontPage headingRef={headingRef} buttonRef={buttonRef} />
-        <HomeDesktop panelsContainer={panelsContainer} />
-        <HomeMobile panelsContainer={panelsContainer} />
+        <HomeDesktop />
+        <HomeMobile />
       </main>
     </>
   );

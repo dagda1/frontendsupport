@@ -1,15 +1,20 @@
-import cs from 'classnames';
+import { useRef } from 'react';
 import * as styles from './HomeMobile.css';
-import type { LegacyRef } from 'react';
+import { Intro } from '../Panels/Intro/Intro';
+import { HelpPanel } from '../Panels/Help/HelpPanel';
 
-interface HomeMobileProps {
-  panelsContainer: LegacyRef<HTMLDivElement>;
-}
+export function HomeMobile(): JSX.Element {
+  const panelsContainer = useRef<HTMLDivElement>(null);
+  const dimensionsRef = useRef<HTMLDivElement>(null);
 
-export function HomeMobile({ panelsContainer }: HomeMobileProps): JSX.Element {
   return (
     <div ref={panelsContainer} className={styles.panels}>
-      <h1>Mobile</h1>
+      <Intro />
+      <HelpPanel innerRef={dimensionsRef} />
+      {/* <Frameworks />
+      <OSS />
+      <Clients />
+      <Final /> */}
     </div>
   );
 }

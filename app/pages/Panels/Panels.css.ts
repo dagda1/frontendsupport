@@ -1,4 +1,5 @@
-import { style } from '@vanilla-extract/css';
+import { responsiveStyle, vars } from '@cutting/component-library';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 export const imageHolder = style({
   height: '100%',
@@ -11,13 +12,35 @@ export const imageHolder = style({
 });
 
 export const caption = style({
-  paddingLeft: '20rem',
-  right: 0,
+  paddingLeft: '5rem',
 });
 
 export const caption2 = style({
-  paddingLeft: '10rem',
-  paddingRight: '10rem',
+  ...responsiveStyle({
+    mobile: {
+      paddingLeft: vars.space['4x'],
+      paddingRight: vars.space['4x'],
+    },
+    desktop: {
+      paddingLeft: '10rem',
+      paddingRight: '10rem',
+    },
+  }),
+});
+
+globalStyle(`${caption} h2, ${caption2} h2`, {
+  textTransform: 'uppercase',
+  lineHeight: 1,
+  ...responsiveStyle({
+    mobile: {
+      fontSize: '3rem',
+      width: '100%',
+    },
+    desktop: {
+      width: '100%',
+      fontSize: '4rem',
+    },
+  }),
 });
 
 export const tripleImages = style({
@@ -38,7 +61,19 @@ globalStyle(`${tripleImages}.frameworks figure:first-child`, {
   width: '50vh',
   height: '50vh',
   paddingBottom: '100%',
-  top: '-12rem',
+  position: 'absolute',
+  left: '-21rem',
+  ...responsiveStyle({
+    mobile: {
+      top: 'auto',
+    },
+    desktop: {
+      top: '-33rem',
+    },
+    wide: {
+      top: '-49rem',
+    },
+  }),
 });
 
 globalStyle(`${tripleImages}.frameworks figure:nth-child(2)`, {
@@ -58,10 +93,12 @@ globalStyle(`${tripleImages}.frameworks figure:last-child`, {
 });
 
 globalStyle(`${tripleImages}.oss figure:first-child`, {
-  width: '80vh',
-  height: '40vh',
+  width: '24rem',
+  height: '24rem',
   paddingBottom: '100%',
-  top: '-12rem',
+  top: '-24rem',
+  left: '-24rem',
+  position: 'absolute',
 });
 
 globalStyle(`${tripleImages}.oss figure:nth-child(2)`, {
@@ -69,15 +106,15 @@ globalStyle(`${tripleImages}.oss figure:nth-child(2)`, {
   height: '40vh',
   position: 'absolute',
   top: '10%',
-  left: '-50%',
+  right: '-6rem',
   zIndex: 3,
 });
 
 globalStyle(`${tripleImages}.oss figure:last-child`, {
-  width: '67vh',
-  height: '26rem',
+  width: 'auto',
+  height: 'auto',
   position: 'absolute',
-  bottom: '-20%',
+  bottom: '0',
   left: '-20%',
 });
 
@@ -85,8 +122,10 @@ globalStyle(`${tripleImages}.clients figure:first-child`, {
   width: '50vh',
   height: '50vh',
   paddingBottom: '100%',
-  top: '-13rem',
-  left: '50%',
+  top: '-9rem',
+  right: '-15rem',
+  border: '10px solid red',
+  position: 'absolute',
 });
 
 globalStyle(`${tripleImages}.clients figure:nth-child(2)`, {
@@ -99,9 +138,9 @@ globalStyle(`${tripleImages}.clients figure:nth-child(2)`, {
 });
 
 globalStyle(`${tripleImages}.clients figure:last-child`, {
-  width: '67vh',
-  height: '26rem',
+  width: '25rem',
+  height: '25rem',
   position: 'absolute',
-  bottom: '-40%',
-  left: '-20%',
+  bottom: '-43rem',
+  left: '-30rem',
 });

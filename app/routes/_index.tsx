@@ -33,6 +33,7 @@ export default function Home() {
       </Canvas>
       <Cursor /> */}
 
+      {/* <Overlay /> */}
       <HomePage />
       <Loader />
     </>

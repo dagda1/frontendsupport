@@ -46,45 +46,45 @@ export function Overlay() {
         return;
       }
 
-      // const timeline = gsap.timeline();
+      const timeline = gsap.timeline();
 
-      // timeline
-      //   .fromTo(
-      //     heading.current,
-      //     { translateX: '-100%', opacity: 0 },
-      //     { translateX: '0%', opacity: 1, duration: 1.8, delay: 0.5 },
-      //   )
-      //   .fromTo(
-      //     buttonRef.current,
-      //     {
-      //       translateX: '-120%',
-      //       opacity: 0,
-      //     },
-      //     {
-      //       translateX: '0%',
-      //       opacity: 1,
-      //     },
-      //   )
-      //   .fromTo(
-      //     cta.current,
-      //     {
-      //       translateX: '-120%',
-      //       opacity: 0,
-      //     },
-      //     {
-      //       translateX: '0%',
-      //       opacity: 1,
-      //     },
-      //   )
-      //   .fromTo(
-      //     'header',
-      //     {
-      //       y: -60,
-      //       opacity: 0,
-      //     },
-      //     { y: 0, opacity: 1, ease: Bounce.easeOut, duration: 1 },
-      //   )
-      //   .to('.scroller', { autoAlpha: 1, duration: 3 });
+      timeline
+        .fromTo(
+          heading.current,
+          { translateX: '-100%', opacity: 0 },
+          { translateX: '0%', opacity: 1, duration: 1.8, delay: 0.5 },
+        )
+        .fromTo(
+          buttonRef.current,
+          {
+            translateX: '-120%',
+            opacity: 0,
+          },
+          {
+            translateX: '0%',
+            opacity: 1,
+          },
+        )
+        .fromTo(
+          cta.current,
+          {
+            translateX: '-120%',
+            opacity: 0,
+          },
+          {
+            translateX: '0%',
+            opacity: 1,
+          },
+        )
+        .fromTo(
+          'header',
+          {
+            y: -60,
+            opacity: 0,
+          },
+          { y: 0, opacity: 1, ease: Bounce.easeOut, duration: 1 },
+        )
+        .to('.scroller', { autoAlpha: 1, duration: 3 });
 
       assert(!!breakglass.current);
       assert(!!imgLeft.current);

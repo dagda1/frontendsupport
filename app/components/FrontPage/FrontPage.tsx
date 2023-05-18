@@ -1,4 +1,4 @@
-import type { LegacyRef, ReactNode } from 'react';
+import type { LegacyRef } from 'react';
 import * as styles from './FrontPage.css';
 import cs from 'classnames';
 import { Scroller } from '../Scroller/Scroller';

@@ -4,7 +4,7 @@ import { style } from '@vanilla-extract/css';
 export const panels = style({
   flexWrap: 'nowrap',
   overscrollBehavior: 'none',
-  flexDirection: 'row',
+  flexDirection: 'column',
   ...responsiveStyle({
     mobile: {
       display: 'flex',
