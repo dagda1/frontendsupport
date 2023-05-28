@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@cutting/util':
-    specifier: ^4.58.1
-    version: 4.58.1
+    specifier: ^4.58.2
+    version: 4.58.2
   '@jsdevtools/rehype-toc':
     specifier: ^3.0.2
     version: 3.0.2
@@ -2908,8 +2908,8 @@ packages:
       citeproc: 2.4.62
     dev: false
 
-  /@cutting/util@4.58.1:
-    resolution: {integrity: sha512-Am7wlfoRhUU2+pFshDgI4YLv37kA2RRnZiw3CWiydHA7Gutf93bcPRd1VFUAVUq/CaVy97n8ZHwYOgHCf4NyLA==}
+  /@cutting/util@4.58.2:
+    resolution: {integrity: sha512-4ti3LuoTYf28jKANQScQWMW88qOkObW/TzAuQOM9qQVtNNJeIMDtaqSCI4qLd259WFxUvRDRyHQmKVvCbmfW/A==}
     dependencies:
       assert-ts: 0.3.4
     dev: false
