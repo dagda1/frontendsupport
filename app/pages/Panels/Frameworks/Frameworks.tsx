@@ -1,17 +1,18 @@
 import cs from 'classnames';
 import { Panel } from '~/components/Panel/Panel';
 import { ExternalLink } from '@cutting/component-library';
-import typescript from '~/images/typescript.svg';
+import typescript from '~/images/typescript.png';
 import graphql from '~/images/graphql3.svg';
 import react from '~/images/react.svg';
 import * as panelStyles from '../Panels.css';
+import * as styles from './Frameworks.css';
 
 export function Frameworks(): JSX.Element {
   return (
     <Panel>
       <div className={panelStyles.imageHolder}>
         <div className={cs(panelStyles.tripleImages, 'frameworks')}>
-          <figure>
+          <figure className={styles.typescript}>
             <img alt="typescript" src={typescript} />
           </figure>
           <figure className="parallax">

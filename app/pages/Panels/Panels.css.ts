@@ -49,18 +49,15 @@ export const tripleImages = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  margin: '10rem 0',
+  margin: '10rem',
 });
 
 globalStyle(`${tripleImages} img`, {
-  width: '100%',
-  height: '100%',
+  width: 'auto',
+  height: 'auto',
 });
 
 globalStyle(`${tripleImages}.frameworks figure:first-child`, {
-  width: '50vh',
-  height: '50vh',
-  paddingBottom: '100%',
   position: 'absolute',
   left: '-21rem',
   ...responsiveStyle({
@@ -68,20 +65,14 @@ globalStyle(`${tripleImages}.frameworks figure:first-child`, {
       top: 'auto',
     },
     desktop: {
-      top: '-33rem',
+      top: '-28rem',
+      border: '10px solid purple',
     },
     wide: {
-      top: '-49rem',
+      top: '-40rem',
+      border: '10px solid red',
     },
   }),
-});
-
-globalStyle(`${tripleImages}.frameworks figure:nth-child(2)`, {
-  width: '45vh',
-  height: '50vh',
-  position: 'absolute',
-  top: '10%',
-  right: '-20%',
 });
 
 globalStyle(`${tripleImages}.frameworks figure:last-child`, {
@@ -92,10 +83,17 @@ globalStyle(`${tripleImages}.frameworks figure:last-child`, {
   left: '-20%',
 });
 
+globalStyle(`${tripleImages}.frameworks figure:nth-child(2)`, {
+  width: '45vh',
+  height: '50vh',
+  position: 'absolute',
+  top: '10%',
+  right: '-0',
+});
+
 globalStyle(`${tripleImages}.oss figure:first-child`, {
   width: '24rem',
   height: '24rem',
-  paddingBottom: '100%',
   top: '-24rem',
   left: '-24rem',
   position: 'absolute',
@@ -121,7 +119,6 @@ globalStyle(`${tripleImages}.oss figure:last-child`, {
 globalStyle(`${tripleImages}.clients figure:first-child`, {
   width: '50vh',
   height: '50vh',
-  paddingBottom: '100%',
   top: '-9rem',
   right: '-15rem',
   border: '10px solid red',
