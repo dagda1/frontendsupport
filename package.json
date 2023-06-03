@@ -12,7 +12,7 @@
   },
   "main": "dist/index.js",
   "dependencies": {
-    "@cutting/util": "^4.58.1",
+    "@cutting/util": "^4.58.2",
     "@mdx-js/esbuild": "^2.3.0",
     "@remix-run/architect": "^1.15.0",
     "@remix-run/node": "^1.15.0",
