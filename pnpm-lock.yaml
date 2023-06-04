@@ -1,12 +1,16 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 dependencies:
   '@cutting/component-library':
     specifier: ^5.39.1
     version: 5.39.1(@vanilla-extract/css@1.11.0)(react-dom@18.2.0)(react-router@6.10.0)(react@18.2.0)
   '@cutting/hooks':
-    specifier: ^4.56.2
-    version: 4.56.2(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^4.56.3
+    version: 4.56.3(react-dom@18.2.0)(react@18.2.0)
   '@cutting/use-get-parent-size':
     specifier: 2.0.1
     version: 2.0.1(react-dom@18.2.0)(react@18.2.0)(resize-observer-polyfill@1.5.1)(use-debounce@9.0.4)
@@ -2928,6 +2932,18 @@ packages:
       react-dom: '>= 18.x.x'
     dependencies:
       '@cutting/util': 4.58.1
+      assert-ts: 0.3.4
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@cutting/hooks@4.56.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-82vtPA2UHG+pqX02H/6nsrS3q/4nrq9iLHJVR6v/lDEaM7+GGZPNk8iXb/iNZnhV9WPhvAIU2G/1Ha5/5lz+GQ==}
+    peerDependencies:
+      react: '>= 18.x.x'
+      react-dom: '>= 18.x.x'
+    dependencies:
+      '@cutting/util': 4.58.2
       assert-ts: 0.3.4
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
