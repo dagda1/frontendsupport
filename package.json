@@ -13,7 +13,7 @@
   "main": "dist/index.js",
   "dependencies": {
     "@cutting/util": "^4.58.2",
-    "@cutting/component-library": "^5.39.1",
+    "@cutting/component-library": "^5.39.2",
     "@cutting/hooks": "^4.56.3",
     "@cutting/use-get-parent-size": "2.0.1",
     "@mdx-js/esbuild": "^2.3.0",
