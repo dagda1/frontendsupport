@@ -23,8 +23,8 @@ export const breaking = style({
   justifyContent: 'center',
   alignItems: 'center',
   width: '100%',
-  paddingRight: vars.space['10x'],
-  paddingLeft: vars.space['10x'],
+  paddingRight: vars.space['xxlarge'],
+  paddingLeft: vars.space['xxlarge'],
   position: 'relative',
   minHeight: '100vh',
 });

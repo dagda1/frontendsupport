@@ -9,7 +9,7 @@ export const container = style({
   ...responsiveStyle({
     mobile: {
       justifyContent: 'flex-start',
-      marginTop: vars.space['15x'],
+      marginTop: vars.space['xxxlarge'],
     },
     tablet: {
       justifyContent: 'center',
@@ -19,26 +19,26 @@ export const container = style({
 });
 
 export const heading = style({
-  textAlign: 'center',
-  padding: vars.space['2x'],
-  ...responsiveStyle({
-    mobile: {
-      marginBottom: vars.space['2x'],
-      fontSize: '6rem',
-      lineHeight: '6rem',
-    },
-    tablet: {
-      fontSize: '8rem',
-      lineHeight: '8rem',
-    },
-    desktop: {
-      width: '50%',
-      marginBottom: 0,
-    },
-    wide: {
-      width: '40%',
-    },
-  }),
+  // textAlign: 'center',
+  // padding: vars.space['small'],
+  // ...responsiveStyle({
+  //   mobile: {
+  //     marginBottom: vars.space['small'],
+  //     fontSize: '6rem',
+  //     lineHeight: '6rem',
+  //   },
+  //   tablet: {
+  //     fontSize: '8rem',
+  //     lineHeight: '8rem',
+  //   },
+  //   desktop: {
+  //     width: '50%',
+  //     marginBottom: 0,
+  //   },
+  //   wide: {
+  //     width: '40%',
+  //   },
+  // }),
 });
 
 export const ctaButton = style([
@@ -62,16 +62,16 @@ export const ctaButton = style([
     }),
   },
   atoms({
-    paddingY: '2x',
+    paddingY: 'small',
     paddingX: {
-      mobile: '4x',
-      desktop: '3x',
-      wide: '5x',
+      mobile: 'medium',
+      desktop: 'medium',
+      wide: 'large',
     },
   }),
 ]);
 
 export const scroller = style({
   position: 'relative',
-  top: vars.space['3x'],
+  top: vars.space['medium'],
 });

@@ -18,8 +18,8 @@ export const caption = style({
 export const caption2 = style({
   ...responsiveStyle({
     mobile: {
-      paddingLeft: vars.space['4x'],
-      paddingRight: vars.space['4x'],
+      paddingLeft: vars.space['medium'],
+      paddingRight: vars.space['medium'],
     },
     desktop: {
       paddingLeft: '10rem',

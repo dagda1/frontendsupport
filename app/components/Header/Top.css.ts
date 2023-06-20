@@ -21,5 +21,5 @@ export const nav = style({
 });
 
 globalStyle(`${nav} li:not(:last-of-type)`, {
-  marginRight: vars.space['2x'],
+  marginRight: vars.space['small'],
 });

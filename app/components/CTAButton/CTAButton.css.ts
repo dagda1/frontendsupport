@@ -21,11 +21,11 @@ export const ctaButton = style([
     }),
   },
   atoms({
-    paddingY: '1x',
+    paddingY: 'xsmall',
     paddingX: {
-      mobile: '2x',
-      desktop: '3x',
-      wide: '5x',
+      mobile: 'small',
+      desktop: 'medium',
+      wide: 'large',
     },
   }),
 ]);

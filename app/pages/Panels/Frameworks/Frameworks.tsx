@@ -1,11 +1,11 @@
 import cs from 'classnames';
 import { Panel } from '~/components/Panel/Panel';
-import { ExternalLink } from '@cutting/component-library';
 import typescript from '~/images/typescript.png';
 import graphql from '~/images/graphql3.svg';
 import react from '~/images/react.svg';
 import * as panelStyles from '../Panels.css';
 import * as styles from './Frameworks.css';
+import { TextLink } from '@cutting/component-library';
 
 export function Frameworks(): JSX.Element {
   return (
@@ -24,7 +24,11 @@ export function Frameworks(): JSX.Element {
         </div>
         <div className={panelStyles.caption2}>
           <h2>
-            With <ExternalLink href="https://cutting.scot/oss">350+ merged pull requests</ExternalLink> into...
+            With{' '}
+            <TextLink external href="https://cutting.scot/oss">
+              350+ merged pull requests
+            </TextLink>{' '}
+            into...
           </h2>
         </div>
       </div>

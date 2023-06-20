@@ -37,7 +37,7 @@ export const headings = style({
 });
 
 globalStyle(`${headings} h2:not(:last-of-type)`, {
-  marginRight: vars.space['20x'],
+  marginRight: vars.space['xxxlarge'],
 });
 
 export const main = style({
