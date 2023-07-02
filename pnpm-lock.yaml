@@ -227,8 +227,8 @@ devDependencies:
     specifier: ^1.11.1
     version: 1.11.1
   '@vanilla-extract/sprinkles':
-    specifier: ^1.6.0
-    version: 1.6.0(@vanilla-extract/css@1.11.1)
+    specifier: ^1.6.1
+    version: 1.6.1(@vanilla-extract/css@1.11.1)
   esbuild:
     specifier: ^0.17.16
     version: 0.17.16
@@ -5206,6 +5206,15 @@ packages:
       '@vanilla-extract/css': ^1.0.0
     dependencies:
       '@vanilla-extract/css': 1.11.1
+    dev: false
+
+  /@vanilla-extract/sprinkles@1.6.1(@vanilla-extract/css@1.11.1):
+    resolution: {integrity: sha512-N/RGKwGAAidBupZ436RpuweRQHEFGU+mvAqBo8PRMAjJEmHoPDttV8RObaMLrJHWLqvX+XUMinHUnD0hFRQISw==}
+    peerDependencies:
+      '@vanilla-extract/css': ^1.0.0
+    dependencies:
+      '@vanilla-extract/css': 1.11.1
+    dev: true
 
   /@web3-storage/multipart-parser@1.0.0:
     resolution: {integrity: sha512-BEO6al7BYqcnfX15W2cnGR+Q566ACXAT9UQykORCWW80lmkpWsnEob6zJS1ZVBKsSJC8+7vJkHwlp+lXG1UCdw==}
